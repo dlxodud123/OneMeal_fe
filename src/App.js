@@ -1,6 +1,8 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import { createContext, useState } from 'react';
+import Main_from from './main/js/main_form';
+
 import Test from './test/test';
 
 // Context 생성
@@ -21,8 +23,9 @@ function App() {
     <MyProvider>
       <div className="App">
         <Routes>
+          <Route path='/' element={<Main_from></Main_from>}></Route>
 
-          <Route path='/' element={<Test></Test>}></Route>
+          <Route path='/test' element={<Test></Test>}></Route>
         </Routes>
       </div>
     </MyProvider>

@@ -1,0 +1,54 @@
+.footer_container{
+    width: 100%;
+    border-top: 0.5px solid rgba(0,0,0,0.2);
+}
+.footer_content{
+    width: 1080px;
+    height: 170px;
+    margin: auto;
+    display: flex;
+}
+
+/* 로고 */
+.footer_logo_content{
+    width: 120px;
+    height: 100px;
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+}
+.footer_logo{
+    width: 90px;
+    height: 90px;
+}
+
+/* 블로그, 깃허브 */
+.footer_address_container{
+    height: 35px;
+    padding-top: 20px;
+    display: flex;
+}
+.footer_address_blog_content{
+    width: 60px;
+}
+.footer_address_blog{
+    color: rgba(0,0,0,0.3);
+    font-weight: bold;
+}
+.blog_github_split_content{
+    width: 30px;
+}
+.blog_github_split{
+    color: rgba(0,0,0,0.3);
+    font-weight: bold;
+}   
+.footer_address_github{
+    color: rgba(0,0,0,0.3);
+    font-weight: bold;
+}
+
+/* 정보 */
+.footer_info{
+    color: rgba(0,0,0,0.4);
+    /* font-weight: bold; */
+}
