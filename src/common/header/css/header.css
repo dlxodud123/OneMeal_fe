@@ -10,7 +10,7 @@
 }
 .header_content{
     width: 1080px;
-    height: 100px;
+    height: 90px;
     margin: auto;
     display: flex;
 }
@@ -27,7 +27,7 @@
 }
 .header_menu_recipe{
     color: #003366;
-    font-size: 17px;
+    font-size: 16px;
     font-weight: bold;
     /* font-family: "Noto Sans Mono", monospace; */
     cursor: pointer;
@@ -39,7 +39,7 @@
 }
 .header_menu_ranking{
     color: #003366;
-    font-size: 17px;
+    font-size: 16px;
     font-weight: bold;
     /* font-family: "Noto Sans Mono", monospace; */
     cursor: pointer;
@@ -53,8 +53,8 @@
     justify-content: center;
 }
 .header_logo{
-    width: 75px;
-    height: 75px;
+    width: 70px;
+    height: 70px;
     cursor: pointer;
 }
 

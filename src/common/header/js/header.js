@@ -22,7 +22,7 @@ const Header = () => {
                         </div>
                     </div>
                     <div className='header_logo_content'>
-                        <img onClick={() => navigate('/')} src={`${process.env.PUBLIC_URL}/img/logo.png`} className='header_logo'></img>
+                        <img onClick={() => navigate('/')} src={`${process.env.PUBLIC_URL}/img/logo/logo.png`} className='header_logo'></img>
                     </div>
                     <div className='header_join_content'>
                         <div className='header_join_login_content'>
