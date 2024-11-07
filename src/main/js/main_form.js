@@ -2,6 +2,7 @@ import './../css/main_form.css';
 import Header from '../../common/header/js/header';
 import Main_img from './main_img';
 import Main_recent from './main_recent';
+import Main_search from './main_search';
 import Footer from '../../common/footer/js/footer';
 
 const Main_from = () => {
@@ -11,6 +12,8 @@ const Main_from = () => {
             <Header></Header>
             <Main_img></Main_img>
             <Main_recent></Main_recent>
+            <Main_search></Main_search>
+            
             <Footer></Footer>
         </div>
     )

@@ -1,0 +1,25 @@
+.main_search_container{
+    width: 1080px;
+    margin: auto;
+}
+
+/* 제목 */
+.main_search_title_container{
+    height: 50px;
+}
+.main_search_title{
+    font-size: 25px;
+    font-weight: bold;
+    color: #003366;
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+/* 사진 */
+.main_search_img_container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+.main_search_img{
+    height: 50px;
+}

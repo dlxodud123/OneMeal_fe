@@ -35,6 +35,7 @@
     color: rgba(0,0,0,0.3);
     font-weight: bold;
     font-size: 16px;
+    font-family: "Noto Sans KR", sans-serif;
 }
 .blog_github_split_content{
     width: 30px;
@@ -42,6 +43,7 @@
 .blog_github_split{
     color: rgba(0,0,0,0.3);
     font-weight: bold;
+    font-family: "Noto Sans KR", sans-serif;
 }   
 .footer_address_github{
     color: rgba(0,0,0,0.3);
@@ -53,4 +55,5 @@
 .footer_info{
     color: rgba(0,0,0,0.4);
     font-size: 15px;
+    font-family: "Noto Sans KR", sans-serif;
 }
