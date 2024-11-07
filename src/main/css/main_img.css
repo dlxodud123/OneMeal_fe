@@ -3,21 +3,39 @@
     margin: 10px auto auto auto;
     display: flex;
     justify-content: center;
+    position: relative;
 }
 
-
-/* prev */
-.main_img_prev_content {
-    width: 150px;
-    height: 420px;
-    display: flex;
-    align-items: center;
+/* arrow */
+.main_img_slide_container{
+    position: absolute;
+    width: 100%;
 }
-.main_img_prev {
+.main_img_slide_content{
+    position: relative;
+    max-width: 1350px;
+    width: 100%;
+    margin: auto;
+}
+.main_img_slide_prev{
     width: 90px;
     height: 90px;
     color: rgba(0, 0, 0, 0.15);
     cursor: pointer;
+    position: absolute;
+    top: 165px;
+    left: 0;
+    display: inline-block;
+}
+.main_img_slide_next{
+    width: 90px;
+    height: 90px;
+    color: rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    position: absolute;
+    top: 165px;
+    right: 0;
+    display: inline-block;
 }
 
 /* slide img */
@@ -39,17 +57,3 @@
     opacity: 1; /* 활성화된 이미지만 보이도록 설정 */
 }
 
-/* next */
-.main_img_next_content {
-    width: 150px;
-    height: 420px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-}
-.main_img_next {
-    width: 90px;
-    height: 90px;
-    color: rgba(0, 0, 0, 0.15);
-    cursor: pointer;
-}
