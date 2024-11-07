@@ -1,0 +1,16 @@
+.main_recent_container{
+    width: 1080px;    
+    height: 500px;
+    margin: 50px auto auto auto;
+}
+.main_recent_title_content{
+    height: 50px;
+}
+.main_recent_title{
+    font-size: 22px;
+    /* font-weight: 400; */
+    /* color: #003366; */
+}
+.main_recent_img_content{
+
+}
