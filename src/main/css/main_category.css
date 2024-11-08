@@ -4,6 +4,7 @@
     margin: 60px auto auto auto;
     background-color: #F9F9F9;
     display: flex;
+
 }
 
 /* prev arrow */
@@ -11,16 +12,25 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
 .main_category_slide_prev{
     width: 45px;
     height: 45px;
     color: rgba(127,127,127,0.3);
+    cursor: pointer;
 }
 
 /* 정보 */
-.main_category_info_content{
-    width: 90px;
+.main_category_info_wrapper {
+    overflow: hidden;
+    width: 990px; /* 90px * 11 (보이는 아이템 수) */
+    display: flex;
+}
+
+.main_category_info_content {
+    display: flex;
+    transition: transform 0.5s ease; /* 이동 애니메이션 */
 }
 
 /* 정보(사진) */
@@ -30,23 +40,33 @@
     display: flex;
     justify-content: center;
     margin-top: 27px;
+    cursor: pointer;
 }
 .main_category_img{
     width: 56px;
     height: 56px;
-
+    cursor: pointer;
 }
 /* 정보(이름) */
 .main_category_img_name_content{
     width: 90px;
-    /* height: 30px; */
-    display: flex;
-    justify-content: center;
+    /* display: flex; */
+    /* justify-content: center; */
+    cursor: pointer;
 }
-.main_category_img_name{
+.main_category_img_on_name{
+    text-align: center;
+    font-size: 14px;
+    color: orange;
+    font-family: "Noto Sans KR", sans-serif;
+    cursor: pointer;
+}
+.main_category_img_off_name{
+    text-align: center;
     font-size: 14px;
     color: #888;
     font-family: "Noto Sans KR", sans-serif;
+    cursor: pointer;
 }
 
 /* next arrow */
@@ -59,4 +79,5 @@
     width: 45px;
     height: 45px;
     color: rgba(127,127,127,0.3);
+    cursor: pointer;
 }
