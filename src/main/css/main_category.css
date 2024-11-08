@@ -1,0 +1,62 @@
+.main_category_container{
+    width: 1080px;
+    height: 140px;
+    margin: 60px auto auto auto;
+    background-color: #F9F9F9;
+    display: flex;
+}
+
+/* prev arrow */
+.main_category_slide_prev_content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main_category_slide_prev{
+    width: 45px;
+    height: 45px;
+    color: rgba(127,127,127,0.3);
+}
+
+/* 정보 */
+.main_category_info_content{
+    width: 90px;
+}
+
+/* 정보(사진) */
+.main_category_img_content{
+    width: 90px;
+    height: 65px;
+    display: flex;
+    justify-content: center;
+    margin-top: 27px;
+}
+.main_category_img{
+    width: 56px;
+    height: 56px;
+
+}
+/* 정보(이름) */
+.main_category_img_name_content{
+    width: 90px;
+    /* height: 30px; */
+    display: flex;
+    justify-content: center;
+}
+.main_category_img_name{
+    font-size: 14px;
+    color: #888;
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+/* next arrow */
+.main_category_slide_next_content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main_category_slide_next{
+    width: 45px;
+    height: 45px;
+    color: rgba(127,127,127,0.3);
+}

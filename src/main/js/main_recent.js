@@ -28,7 +28,7 @@ const Main_recent = () => {
                         />
                         <label className='main_recent_img_name'>
                             {info.name}
-                            {/* 회곱차아니챠니탕ㄴㅇㄹㅁㄴㅇㄹ */}
+                            {/* 회곱차아니챠니탕회곱차아니챠니탕 */}
                         </label>
                     </div>
                 ))}

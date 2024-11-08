@@ -14,12 +14,93 @@
     font-family: "Noto Sans KR", sans-serif;
 }
 
-/* 사진 */
-.main_search_img_container{
+/* 정보 */
+.main_search_info_container{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
 }
+.main_search_info_content{
+    border-top: 1px solid rgba(0,0,0,0.1);
+    height: 105px;
+    display: flex;
+}
+/* 정보(숫자) */
+.main_search_img_num_content{
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main_search_img_num{
+    font-size: 24px;
+    /* font-weight: bold; */
+    font-family: "Noto Sans KR", sans-serif;
+}
+/* 정보(사진) */
+.main_search_img_content{
+    width: 90px;
+    display: flex;
+    align-items: center;
+}
 .main_search_img{
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+}
+/* 정보(이름) */
+.main_search_img_name_content{
+    width: 270px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.main_search_img_name{
+    font-size: 20px;
+    font-family: "Noto Sans KR", sans-serif;
+    cursor: pointer;
+}
+/* 정보(찜) */
+.main_search_img_bookmark_container{
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main_search_img_bookmark_content{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: "cover";
+    background-color: rgba(128, 128, 128, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.main_search_img_bookmark{
+    font-size: 20px;
+    color: white;
+}
+
+/* 더보기 및 접기 */
+.main_search_more_container{
     height: 50px;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.main_search_more_icon{
+    color: rgba(128, 128, 128, 0.6);
+    font-size: 22px;
+    margin-right: 8px;
+}
+.main_search_more{
+    font-size: 18px;
+    font-family: "Noto Sans KR", sans-serif;
+    color: rgba(128, 128, 128, 1);
+    cursor: pointer;
 }
