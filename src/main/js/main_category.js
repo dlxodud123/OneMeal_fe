@@ -38,29 +38,30 @@ const Main_category = () => {
 
     // 한 번에 보이는 요소의 개수
     const visibleCount = 11;
-// 다음으로 이동
-const handleNext = () => {
-    setStartIndex((prevIndex) => {
-        // 현재 보이는 항목이 마지막에 다다르면 처음으로 돌아감
-        if (prevIndex + visibleCount >= categoryInfo.length) {
-            return 0; // 처음으로 돌아가도록 설정
-        } else {
-            return prevIndex + 1; // 다음 항목으로 이동
-        }
-    });
-};
+    
+    // 다음으로 이동
+    const handleNext = () => {
+        setStartIndex((prevIndex) => {
+            // 현재 보이는 항목이 끝에 도달하면 더 이상 이동하지 않음
+            if (prevIndex + visibleCount >= categoryInfo.length) {
+                return prevIndex; // 그대로 유지하여 더 이상 이동하지 않음
+            } else {
+                return prevIndex + 1; // 다음 항목으로 이동
+            }
+        });
+    };
 
-// 이전으로 이동
-const handlePrev = () => {
-    setStartIndex((prevIndex) => {
-        // 첫 번째 항목에 도달하면 마지막 항목으로 돌아감
-        if (prevIndex === 0) {
-            return categoryInfo.length - visibleCount; // 마지막 항목으로 돌아가도록 설정
-        } else {
-            return prevIndex - 1; // 이전 항목으로 이동
-        }
-    });
-};
+    // 이전으로 이동
+    const handlePrev = () => {
+        setStartIndex((prevIndex) => {
+            // 현재 보이는 항목이 첫 번째 항목에 도달하면 더 이상 이동하지 않음
+            if (prevIndex === 0) {
+                return prevIndex; // 그대로 유지하여 더 이상 이동하지 않음
+            } else {
+                return prevIndex - 1; // 이전 항목으로 이동
+            }
+        });
+    };
     
     return(
         <div className='main_category_container'>
@@ -82,7 +83,7 @@ const handlePrev = () => {
                     {categoryInfo.map((info, index) => (
                         <div key={index} className='main_category_img_content'
                              onMouseEnter={() => setCategoryHover(index)}
-                             onMouseLeave={() => setCategoryHover(null)}>
+                             onMouseLeave={() => setCategoryHover(null)} >
                             <img
                                 className='main_category_img'
                                 src={index === categoryHover ? info.onImg : info.offImg}

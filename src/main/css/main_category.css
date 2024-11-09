@@ -1,7 +1,7 @@
 .main_category_container{
     width: 1080px;
     height: 140px;
-    margin: 60px auto auto auto;
+    margin: 50px auto auto auto;
     background-color: #F9F9F9;
     display: flex;
 
@@ -27,18 +27,17 @@
     width: 990px; /* 90px * 11 (보이는 아이템 수) */
     display: flex;
 }
-
 .main_category_info_content {
     display: flex;
-    transition: transform 0.5s ease; /* 이동 애니메이션 */
+    transition: transform 1s ease; /* 이동 애니메이션 */
 }
 
 /* 정보(사진) */
 .main_category_img_content{
     width: 90px;
-    height: 65px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     margin-top: 27px;
     cursor: pointer;
 }
@@ -49,9 +48,6 @@
 }
 /* 정보(이름) */
 .main_category_img_name_content{
-    width: 90px;
-    /* display: flex; */
-    /* justify-content: center; */
     cursor: pointer;
 }
 .main_category_img_on_name{
