@@ -34,7 +34,6 @@
 }
 .main_search_img_num{
     font-size: 24px;
-    /* font-weight: bold; */
     font-family: "Noto Sans KR", sans-serif;
 }
 /* 정보(사진) */
@@ -46,6 +45,8 @@
 .main_search_img{
     width: 80px;
     height: 80px;
+    border-radius: 50%;
+    border: 0.5px solid rgba(0,0,0,0.3);
     cursor: pointer;
 }
 /* 정보(이름) */
@@ -68,6 +69,17 @@
     justify-content: center;
 }
 .main_search_img_bookmark_content{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: "cover";
+    background-color: orange;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.main_search_img_bookmark_none_content{
     width: 40px;
     height: 40px;
     border-radius: 50%;

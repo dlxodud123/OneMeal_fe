@@ -11,27 +11,28 @@ const Main_search = () => {
     let [moreBtn, setMoreBtn] = useState(false);
 
     const searchInfo = [
-        { img: `${process.env.PUBLIC_URL}/img/recent/recent-img1.jpg`, name: "삼겹살" },
-        { img: `${process.env.PUBLIC_URL}/img/recent/recent-img2.jpg`, name: "곱창" },
-        { img: `${process.env.PUBLIC_URL}/img/recent/recent-img3.jpg`, name: "회" },
-        { img: `${process.env.PUBLIC_URL}/img/recent/recent-img4.jpg`, name: "김치찌개" },
-        { img: `${process.env.PUBLIC_URL}/img/recent/recent-img5.jpg`, name: "된장찌개" },
-        { img: `${process.env.PUBLIC_URL}/img/recent/recent-img1.jpg`, name: "삼겹살" },
-        { img: `${process.env.PUBLIC_URL}/img/recent/recent-img2.jpg`, name: "곱창" },
-        { img: `${process.env.PUBLIC_URL}/img/recent/recent-img3.jpg`, name: "회" },
-        { img: `${process.env.PUBLIC_URL}/img/recent/recent-img4.jpg`, name: "김치찌개" },
-        { img: `${process.env.PUBLIC_URL}/img/recent/recent-img5.jpg`, name: "된장찌개" },
-        { img: `${process.env.PUBLIC_URL}/img/recent/recent-img1.jpg`, name: "삼겹살" },
-        { img: `${process.env.PUBLIC_URL}/img/recent/recent-img2.jpg`, name: "곱창" },
-        { img: `${process.env.PUBLIC_URL}/img/recent/recent-img3.jpg`, name: "회" },
-        { img: `${process.env.PUBLIC_URL}/img/recent/recent-img4.jpg`, name: "김치찌개" },
-        { img: `${process.env.PUBLIC_URL}/img/recent/recent-img5.jpg`, name: "된장찌개" },
-        { img: `${process.env.PUBLIC_URL}/img/recent/recent-img1.jpg`, name: "삼겹살" },
-        { img: `${process.env.PUBLIC_URL}/img/recent/recent-img2.jpg`, name: "곱창" },
-        { img: `${process.env.PUBLIC_URL}/img/recent/recent-img3.jpg`, name: "회" },
-        { img: `${process.env.PUBLIC_URL}/img/recent/recent-img4.jpg`, name: "김치찌개" },
-        { img: `${process.env.PUBLIC_URL}/img/recent/recent-img5.jpg`, name: "된장찌개" }
+        { img: `${process.env.PUBLIC_URL}/img/recent/recent-img1.jpg`, name: "삼겹살", bookmark: true },
+        { img: `${process.env.PUBLIC_URL}/img/recent/recent-img2.jpg`, name: "곱창", bookmark: false },
+        { img: `${process.env.PUBLIC_URL}/img/recent/recent-img3.jpg`, name: "회", bookmark: false },
+        { img: `${process.env.PUBLIC_URL}/img/recent/recent-img4.jpg`, name: "김치찌개", bookmark: true },
+        { img: `${process.env.PUBLIC_URL}/img/recent/recent-img5.jpg`, name: "된장찌개", bookmark: false },
+        { img: `${process.env.PUBLIC_URL}/img/recent/recent-img1.jpg`, name: "삼겹살", bookmark: false },
+        { img: `${process.env.PUBLIC_URL}/img/recent/recent-img2.jpg`, name: "곱창", bookmark: false },
+        { img: `${process.env.PUBLIC_URL}/img/recent/recent-img3.jpg`, name: "회", bookmark: false },
+        { img: `${process.env.PUBLIC_URL}/img/recent/recent-img4.jpg`, name: "김치찌개", bookmark: false },
+        { img: `${process.env.PUBLIC_URL}/img/recent/recent-img5.jpg`, name: "된장찌개", bookmark: true },
+        { img: `${process.env.PUBLIC_URL}/img/recent/recent-img1.jpg`, name: "삼겹살", bookmark: false },
+        { img: `${process.env.PUBLIC_URL}/img/recent/recent-img2.jpg`, name: "곱창", bookmark: false },
+        { img: `${process.env.PUBLIC_URL}/img/recent/recent-img3.jpg`, name: "회", bookmark: false },
+        { img: `${process.env.PUBLIC_URL}/img/recent/recent-img4.jpg`, name: "김치찌개", bookmark: false },
+        { img: `${process.env.PUBLIC_URL}/img/recent/recent-img5.jpg`, name: "된장찌개", bookmark: true },
+        { img: `${process.env.PUBLIC_URL}/img/recent/recent-img1.jpg`, name: "삼겹살", bookmark: false },
+        { img: `${process.env.PUBLIC_URL}/img/recent/recent-img2.jpg`, name: "곱창", bookmark: false },
+        { img: `${process.env.PUBLIC_URL}/img/recent/recent-img3.jpg`, name: "회", bookmark: false },
+        { img: `${process.env.PUBLIC_URL}/img/recent/recent-img4.jpg`, name: "김치찌개", bookmark: false },
+        { img: `${process.env.PUBLIC_URL}/img/recent/recent-img5.jpg`, name: "된장찌개", bookmark: false }
     ];
+    
     
     const displayedInfo = moreBtn ? searchInfo : searchInfo.slice(0, 6);
     
@@ -64,9 +65,17 @@ const Main_search = () => {
                             </label>
                         </div>
                         <div className='main_search_img_bookmark_container'>
-                            <div className='main_search_img_bookmark_content'>
-                                <FaRegHeart className='main_search_img_bookmark'/>
-                            </div>
+                            {
+                                info.bookmark ? 
+                                <div className='main_search_img_bookmark_content'>
+                                    <FaRegHeart className='main_search_img_bookmark'/>
+                                </div>
+                                :
+                                <div className='main_search_img_bookmark_none_content'>
+                                    <FaRegHeart className='main_search_img_bookmark'/>
+                                </div>
+                            }
+                            
                         </div>
                     </div>
                 ))}

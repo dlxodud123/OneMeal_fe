@@ -2,4 +2,100 @@
     width: 1080px;
     height: 600px;
     margin: 50px auto auto auto;
+    display: flex;
 }
+.main_ranking_bookmark_container,
+.main_ranking_comment_container{
+    width: 530px;
+}
+
+/* 제목 */
+.main_ranking_bookmark_title_content,
+.main_ranking_comment_title_content{
+    height: 50px;
+}
+.main_ranking_bookmark_title,
+.main_ranking_comment_title{
+    font-size: 25px;
+    font-weight: bold;
+    color: #003366;
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+/* 랭킹 정보 */
+.main_ranking_bookmark_info_content,
+.main_ranking_comment_info_content{
+    height: 100px;
+    display: flex;
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+/* 랭킹 정보(숫자) */
+.main_ranking_bookmark_img_num_content,
+.main_ranking_comment_img_num_content{
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main_ranking_bookmark_img_num,
+.main_ranking_comment_img_num{
+    font-size: 24px;
+    font-family: "Noto Sans KR", sans-serif;
+}
+/* 랭킹 정보(사진) */
+.main_ranking_bookmark_img_content,
+.main_ranking_comment_img_content{
+    width: 90px;
+    display: flex;
+    align-items: center;
+}
+.main_ranking_bookmark_img,
+.main_ranking_comment_img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 0.5px solid rgba(0,0,0,0.3);
+}
+/* 랭킹 정보(이름) */
+.main_ranking_bookmark_img_name_content,
+.main_ranking_comment_img_name_content{
+    width: 270px;
+    display: flex;
+    align-items: center;
+}
+.main_ranking_bookmark_img_name,
+.main_ranking_comment_img_name{
+    font-size: 20px;
+    font-family: "Noto Sans KR", sans-serif;
+}
+/* 랭킹 정보(횟수) */
+.main_ranking_bookmark_img_count_container,
+.main_ranking_comment_img_count_container{
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.main_ranking_bookmark_img_count_icon{
+    font-size: 17px;
+    color: orange;
+}
+.main_ranking_bookmark_img_count_none_icon,
+.main_ranking_comment_img_count_icon{
+    font-size: 17px;
+    color: rgba(128, 128, 128, 1);
+}
+.main_ranking_bookmark_img_count,
+.main_ranking_comment_img_count{
+    font-size: 15px;
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+
+/* 공백 */
+.main_ranking_blank{
+    width: 20px;
+}
+
+
