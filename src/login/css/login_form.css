@@ -1,0 +1,235 @@
+.login_form_container{
+}
+.login_form_content{
+    width: 1080px;
+    margin: auto;
+}
+
+/* 제목 */
+.login_form_title_content{
+    margin-top: 60px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+.login_title{
+    width: 85px;
+    height: 45px;
+    font-size: 25px;
+    font-weight: bold;
+    color: #003366;
+    font-family: "Noto Sans KR", sans-serif;
+}
+.login_title_serve{
+    font-size: 14px;
+    color: rgba(0,0,0,0.4);
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+/* 로그인 폼 */
+.login_form_default_sns_container{
+    height: 400px;
+    display: flex;
+}
+
+/* 로그인 폼(기본) */
+.login_form_default_container{
+    width: 540px;
+}
+.login_form_default_content{
+    height: 160px;
+    margin-top: 80px;
+    border-right: 1px solid rgba(0,0,0,0.1);
+}
+/* 기본 (제목) */
+.login_form_default_title_content{
+    width: 390px;
+    height: 45px;
+    margin: auto;
+}
+.login_form_default_title{
+    font-size: 18px;
+    font-weight: 500;
+    font-family: "Noto Sans KR", sans-serif;
+}
+/* 기본 (아이디, 비밀번호) */
+.login_form_input_container{
+    width: 390px;
+    display: flex;
+    margin: auto;
+}
+.login_form_input_content{
+}
+/* 기본 (아이디) */
+.login_form_default_input_id_content{
+    height: 35px;
+    display: flex;
+    align-items: center;
+}
+.login_form_default_input_id_title{
+    width: 60px;
+    font-size: 12px;
+    font-family: "Noto Sans KR", sans-serif;
+}
+.login_form_default_input_id{
+    width: 240px;
+    height: 35px;
+    border: 1px solid rgba(0,0,0,0.2);
+    font-size: 12px;
+    font-family: "Noto Sans KR", sans-serif;
+    outline: none;
+    padding-left: 15px;
+}
+/* 기본 (비밀번호) */
+.login_form_default_input_pwd_content{
+    height: 35px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+.login_form_default_input_pwd_title{
+    width: 60px;
+    font-size: 12px;
+    font-family: "Noto Sans KR", sans-serif;
+}
+.login_form_default_input_pwd{
+    width: 240px;
+    height: 35px;
+    border: 1px solid rgba(0,0,0,0.2);
+    font-size: 12px;
+    font-family: "Noto Sans KR", sans-serif;
+    outline: none;
+    padding-left: 15px;
+}
+/* 기본 (버튼) */
+.login_form_defualt_btn_content{
+    width: 80px;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #003366;
+    cursor: pointer;
+}
+.login_form_default_btn{
+    color: white;
+    font-family: "Noto Sans KR", sans-serif;
+    cursor: pointer;
+}
+
+/* 기본 (아이디 & 비번 찾기 및 회원가입) */
+.login_form_default_find_content{
+    height: 20px;
+    display: flex;
+    margin-top: 12px;
+    margin-left: 135px;
+}
+/* 기본 (아이디 찾기) */
+.login_form_default_find_id_content{
+    width: 65px;
+    display: flex;
+    align-items: center;
+}
+.login_form_default_find_id{
+    font-size: 12px;
+    font-family: "Noto Sans KR", sans-serif;
+    color: rgba(0,0,0,0.4);
+    font-weight: 500;
+    cursor: pointer;
+}
+/* 기본 (비번 찾기) */
+.login_form_default_find_pwd_content{
+    width: 75px;
+    display: flex;
+    align-items: center;
+}
+.login_form_default_find_pwd{
+    font-size: 12px;
+    font-family: "Noto Sans KR", sans-serif;
+    color: rgba(0,0,0,0.4);
+    font-weight: 500;
+    cursor: pointer;
+}
+/* 기본 (회원가입) */
+.login_form_default_find_signup_content{
+    width: 70px;
+    display: flex;
+    align-items: center;
+}
+.login_form_default_find_signup{
+    font-size: 12px;
+    font-family: "Noto Sans KR", sans-serif;
+    color: rgba(0,0,0,0.4);
+    font-weight: 500;
+    cursor: pointer;
+}
+/* 기본 (파이프) */
+.login_form_default_pipe_content{
+    width: 10px;
+    display: flex;
+    align-items: center;
+}
+.login_form_default_pipe{
+    font-size: 12px;
+    font-family: "Noto Sans KR", sans-serif;
+    color: rgba(0,0,0,0.2);
+    font-weight: 500;
+}
+
+
+/* 로그인 폼(sns) */
+.login_form_sns_container{
+    width: 540px;
+}
+.login_form_sns_content{
+    height: 160px;
+}
+/* sns(제목) */
+.login_form_sns_title_container{
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+}
+.login_form_sns_title_content{
+    width: 390px;
+    height: 45px;
+}
+.login_form_sns_title{
+    font-size: 18px;
+    font-weight: 500;
+    font-family: "Noto Sans KR", sans-serif;
+}
+/* sns(구글, 네이버, 카카오톡) */
+.login_form_sns_icon_container{
+    display: flex;
+    justify-content: center;
+}
+.login_form_sns_icon_content{
+    width: 390px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* sns(아이콘) */
+.login_form_sns_all_icon_content{
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    /* height: 70px; */
+}   
+.login_form_all_sns_icon{
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+}
+
+
+/* input(text) 일부 padding값 삭제 */
+input[type="text" i] {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-right: 0px;
+}
+/* input(radio) 기본 diplay 삭제 */
+input[type="radio" i] {
+    display: none;
+}

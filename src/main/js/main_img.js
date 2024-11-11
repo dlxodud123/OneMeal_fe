@@ -3,7 +3,7 @@ import { MyContext } from '../../App';
 import { useContext, useEffect, useState } from 'react';
 
 const Main_img = () => {
-    const {api} = useContext(MyContext)
+    const {api} = useContext(MyContext);
 
     const [currentIndex, setCurrentIndex] = useState(0);
     const images = [`${process.env.PUBLIC_URL}/img/slide/main-img1.png`, `${process.env.PUBLIC_URL}/img/slide/main-img2.png`];

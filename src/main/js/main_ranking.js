@@ -8,11 +8,11 @@ const Main_ranking = () => {
     const {api} = useContext(MyContext);
 
     const bookmarkInfo = [
-        { img: `${process.env.PUBLIC_URL}/img/recent/recent-img1.jpg`, name: "삼겹살", count: 9487, bookmark: true },
-        { img: `${process.env.PUBLIC_URL}/img/recent/recent-img2.jpg`, name: "곱창", count: 9112, bookmark: false },
-        { img: `${process.env.PUBLIC_URL}/img/recent/recent-img3.jpg`, name: "회", count: 7023, bookmark: false },
-        { img: `${process.env.PUBLIC_URL}/img/recent/recent-img4.jpg`, name: "김치찌개", count: 4890, bookmark: false },
-        { img: `${process.env.PUBLIC_URL}/img/recent/recent-img5.jpg`, name: "된장찌개", count: 4701, bookmark: true }
+        { img: `${process.env.PUBLIC_URL}/img/recent/recent-img1.jpg`, name: "삼겹살", count: 9487 },
+        { img: `${process.env.PUBLIC_URL}/img/recent/recent-img2.jpg`, name: "곱창", count: 9112 },
+        { img: `${process.env.PUBLIC_URL}/img/recent/recent-img3.jpg`, name: "회", count: 7023 },
+        { img: `${process.env.PUBLIC_URL}/img/recent/recent-img4.jpg`, name: "김치찌개", count: 4890 },
+        { img: `${process.env.PUBLIC_URL}/img/recent/recent-img5.jpg`, name: "된장찌개", count: 4701 }
     ];
     
     const commentInfo = [
@@ -50,16 +50,10 @@ const Main_ranking = () => {
                         <div className='main_ranking_bookmark_img_name_content'>
                             <label className='main_ranking_bookmark_img_name'>
                                 {info.name}
-                                {/* 회곱차아니챠니탕회곱차아니챠니탕 */}
                             </label>
                         </div>
                         <div className='main_ranking_bookmark_img_count_container'>
-                            {
-                                info.bookmark ? 
-                                <FaRegHeart className='main_ranking_bookmark_img_count_icon' />
-                                :
-                                <FaRegHeart className='main_ranking_bookmark_img_count_none_icon' />
-                            }
+                            <FaRegHeart className='main_ranking_bookmark_img_count_icon' />
                             <label className='main_ranking_bookmark_img_count'>
                                 {info.count}
                             </label>
@@ -94,7 +88,6 @@ const Main_ranking = () => {
                         <div className='main_ranking_comment_img_name_content'>
                             <label className='main_ranking_comment_img_name'>
                                 {info.name}
-                                {/* 회곱차아니챠니탕회곱차아니챠니탕 */}
                             </label>
                         </div>
                         <div className='main_ranking_comment_img_count_container'>

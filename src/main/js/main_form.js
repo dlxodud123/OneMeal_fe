@@ -21,7 +21,7 @@ const Main_from = () => {
 
         setLoading(true); // 로딩 시작
         try {
-            const response = await axios.get('http://13.209.12.149:8081/api/test', {
+            const response = await axios.get('http://3.34.144.197:8081/api/json', {
                 headers: {
                     'Content-Type': 'application/json', // 텍스트 형식으로 응답 받기
                 },
@@ -49,6 +49,7 @@ const Main_from = () => {
         }
     };
 
+
     return(
         <div className='main_form_container'>
             <Header></Header>
@@ -57,7 +58,7 @@ const Main_from = () => {
             <Main_search></Main_search>
             <Main_category></Main_category>
             <Main_ranking></Main_ranking>
-            <button onClick={() => fetchData()}></button>
+            <button style={{width:"100px", height:"100px"}} onClick={() => fetchData()}>클릭</button>
 
             <Footer></Footer>
         </div>
