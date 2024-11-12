@@ -13,86 +13,40 @@ const Login_form = () => {
     let [kakaoLogin, setKakaoLogin] = useState(false);
 
     // 구글 로그인
-    const clientId = '357346370305-im49i267ggf9efg53vn0ndk11j5ud7m2.apps.googleusercontent.com';
-    const redirectUri = 'http://localhost:3000/callback'; 
-
+    const clientId = '597673576446-t8vtu1oo6bge8i7on5a502m59ugvrs7b.apps.googleusercontent.com'; // 클라이언트 id 기입
+    const redirectUri = 'http://localhost:3000/google/callback';
+    
     const handleGoogleLogin = () => {
         const googleAuthUrl = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=token&scope=email%20profile&include_granted_scopes=true&state=state_parameter_passthrough_value`;
         window.location.href = googleAuthUrl; // Google 로그인 페이지로 리다이렉트
     };
 
-    useEffect(() => {
-        const hash = window.location.hash;
-        const params = new URLSearchParams(hash.substring(1)); // # 뒤의 값을 추출
-        const accessToken = params.get('access_token'); // 토큰을 추출
-
-        if (accessToken) {
-            console.log('Access Token:', accessToken);
-
-            // 사용자 정보를 요청하는 API 호출
-            fetch('https://www.googleapis.com/oauth2/v3/userinfo', {
-                method: 'GET',
-                headers: {
-                    Authorization: `Bearer ${accessToken}`,
-                },
-            })
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error('네트워크 응답이 좋지 않습니다.');
-                }
-                return response.json(); // JSON 형태로 응답 변환
-            })
-            .then((userInfo) => {
-                console.log('사용자 정보: ', userInfo);
-                console.log('사용자 이메일: ', userInfo.email);
-                console.log('사용자 이름: ', userInfo.name);
-                // 사용자 정보를 상태에 저장하거나 처리
-                setGoogleLogin(true); // 구글 로그인 확인
-                navigate('/'); // 토큰 처리 후 원하는 페이지로 이동
-            })
-            .catch((error) => {
-                console.error('사용자 정보 요청 실패:', error);
-            });
-        }
-    }, [navigate, setGoogleLogin]);
-
     // 카카오톡 로그인
     useEffect(() => {
         if (!window.Kakao.isInitialized()) {
-          window.Kakao.init('747fd8f5dc40c3ca09b3c944d4e795bd');  // 발급받은 JavaScript 키
+            window.Kakao.init('747fd8f5dc40c3ca09b3c944d4e795bd'); // 발급받은 JavaScript 키
         }
     }, []);
     const handleKakaoLogin = () => {
         window.Kakao.Auth.login({
             success: function (authObj) {
-            console.log('카카오 로그인 성공', authObj);
-
-            window.Kakao.API.request({
-                url: '/v2/user/me',
-                success: function (res) {
-                console.log('사용자 정보: ', res);
-                // 사용자 정보를 상태에 저장하거나 처리
-                const kakaoAccount = res.kakao_account;
-
-                // 이메일 정보 확인 및 콘솔 출력
-                if (kakaoAccount.has_email) {
-                    console.log('사용자 이메일: ', kakaoAccount.email); 
-                    console.log('사용자 이름: ', kakaoAccount.profile.nickname);
-                    setKakaoLogin(true); // 카카오톡 로그인 확인
-                    navigate("/")
-                } else {
-                    console.log('이메일 제공에 동의하지 않음');
-                }
-                },
-                fail: function (error) {
-                console.log('사용자 정보 요청 실패', error);
-                },
-            });
+                console.log('카카오 로그인 성공', authObj);
+                navigate('/kakao/callback');
             },
             fail: function (err) {
-            console.log('카카오 로그인 실패', err);
+                console.log('카카오 로그인 실패', err);
             },
         });
+    };
+
+    // 네이버 로그인
+    const handleNaverLogin = () => {
+        const clientId = '6ygsXgVhlIwzoMfZtVY7';  // 네이버 클라이언트 ID
+        const redirectUri = 'http://localhost:3000/naver/callback';  // 리다이렉트 URI
+        const state = 'random_state_value';  // CSRF 방지용 랜덤값
+        const naverAuthUrl = `https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&state=${state}`;
+        
+        window.location.href = naverAuthUrl;
     };
     
     return(
@@ -160,7 +114,7 @@ const Login_form = () => {
                                         <img onClick={handleKakaoLogin} src={`${process.env.PUBLIC_URL}/img/login/kakao-logo.png`} className='login_form_all_sns_icon'></img>
                                     </div>
                                     <div className='login_form_sns_all_icon_content'>
-                                        <img src={`${process.env.PUBLIC_URL}/img/login/image.png`} className='login_form_all_sns_icon'></img>
+                                        <img onClick={handleNaverLogin} src={`${process.env.PUBLIC_URL}/img/login/image.png`} className='login_form_all_sns_icon'></img>
                                     </div>
                                 </div>
                             </div>

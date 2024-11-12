@@ -4,6 +4,9 @@ import { Route, Routes } from 'react-router-dom';
 import { createContext, useState } from 'react';
 import Main_from from './main/js/main_form';
 import Login_form from './login/js/login_form';
+import Google_callback from './callback/google/google_callback';
+import Kakao_callback from './callback/kakao/kakao_callback';
+import Naver_callback from './callback/naver/naver_callback';
 
 import Test from './test/test';
 
@@ -27,6 +30,9 @@ function App() {
         <Routes>
           <Route path='/' element={<Main_from></Main_from>}></Route>
           <Route path='/login' element={<Login_form></Login_form>}></Route>
+          <Route path='/google/callback' element={<Google_callback></Google_callback>}></Route>
+          <Route path='/kakao/callback' element={<Kakao_callback></Kakao_callback>}></Route>
+          <Route path='/naver/callback' element={<Naver_callback></Naver_callback>}></Route>
 
           <Route path='/test' element={<Test></Test>}></Route>
         </Routes>
