@@ -13,7 +13,7 @@
 .footer_logo_content{
     width: 120px;
     height: 113px;
-    padding-top: 23px;
+    padding-top: 20px;
     display: flex;
     align-items: center;
 }
@@ -54,6 +54,6 @@
 /* 정보 */
 .footer_info{
     color: rgba(0,0,0,0.4);
-    font-size: 15px;
+    font-size: 14px;
     font-family: "Noto Sans KR", sans-serif;
 }

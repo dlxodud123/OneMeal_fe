@@ -11,6 +11,7 @@ const Login_form = () => {
 
     let [googleLogin, setGoogleLogin] = useState(false);
     let [kakaoLogin, setKakaoLogin] = useState(false);
+    let [naverLogin, setNaverLogin] = useState(false);
 
     // 구글 로그인
     const clientId = '597673576446-t8vtu1oo6bge8i7on5a502m59ugvrs7b.apps.googleusercontent.com'; // 클라이언트 id 기입
@@ -54,8 +55,8 @@ const Login_form = () => {
             <Header></Header>
             <body className='login_form_content'>
                 <div className='login_form_title_content'>
-                    <label className='login_title'>로그인</label>
-                    <label className='login_title_serve'>한끼식사 홈페이지에 오신 것을 환영합니다.</label>
+                    <label className='login_form_title'>로그인</label>
+                    <label className='login_form_title_serve'>한끼식사 홈페이지에 오신 것을 환영합니다.</label>
                 </div>
                 <div className='login_form_default_sns_container'>
                     <div className='login_form_default_container'>

@@ -7,10 +7,10 @@
 
 /* 제목 */
 .login_form_title_content{
-    margin-top: 60px;
+    margin-top: 45px;
     border-bottom: 1px solid rgba(0,0,0,0.1);
 }
-.login_title{
+.login_form_title{
     width: 85px;
     height: 45px;
     font-size: 25px;
@@ -18,7 +18,7 @@
     color: #003366;
     font-family: "Noto Sans KR", sans-serif;
 }
-.login_title_serve{
+.login_form_title_serve{
     font-size: 14px;
     color: rgba(0,0,0,0.4);
     font-family: "Noto Sans KR", sans-serif;

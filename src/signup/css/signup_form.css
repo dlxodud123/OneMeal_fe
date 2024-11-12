@@ -1,0 +1,104 @@
+.signup_form_container{
+}
+.signup_form_content{
+    width: 1080px;
+    margin: auto;
+}
+
+/* 제목 */
+.signup_form_title_content{
+    margin-top: 45px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+.signup_form_title{
+    width: 110px;
+    height: 45px;
+    font-size: 25px;
+    font-weight: bold;
+    color: #003366;
+    font-family: "Noto Sans KR", sans-serif;
+}
+.signup_form_title_serve{
+    font-size: 14px;
+    color: rgba(0,0,0,0.4);
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+/* 회원가입 폼 */
+.signup_form_info_container{
+    width: 880px;
+    margin: auto;
+}
+
+/* 회원가입 폼(기본정보) */
+.signup_form_default_info_container{
+    margin-top: 40px;
+}
+/* 기본정보 (제목) */
+.signup_form_default_info_title_content{
+    height: 40px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+.signup_form_default_info_title{
+    font-size: 17px;
+    font-weight: 500;
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+
+.signup_form_default_info_content{
+    /* height: 500px; */
+}
+/* 기본정보 (아이디) */
+.signup_form_default_info_id_content{
+    height: 50px;
+}
+.signup_form_default_info_id_title_content{
+    width: 120px;
+    padding-left: 15px;
+    font-size: 12px;
+    font-family: "Noto Sans KR", sans-serif;
+    font-weight: 400;
+    display: flex;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+.signup_form_default_info_id_title_icon{
+    width: 7px;
+    padding-top: 7px;
+}
+.signup_form_default_info_id_title{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    color: #5e5e5e;
+}
+.signup_form_default_info_id_input_content{
+    width: 760px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    padding: 10px 17px;
+}
+.signup_form_default_info_id_input{
+    width: 200px;
+    height: 27px;
+    border: 1px solid rgba(0,0,0,0.1);
+    padding-left: 10px;
+    outline: none;
+    font-size: 12px;
+    color: #717171;
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+
+
+
+/* 회원가입 폼(선택정보) */
+.signup_form_select_info_container{
+
+}
+
+
+
+/* 기본 padding값 0으로 적용 */
+th, td {
+    padding: 0;
+}
