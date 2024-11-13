@@ -8,10 +8,10 @@
 /* 제목 */
 .signup_form_title_content{
     margin-top: 45px;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 1px solid #f4f4f4;
 }
 .signup_form_title{
-    width: 110px;
+    width: 105px;
     height: 45px;
     font-size: 25px;
     font-weight: bold;
@@ -37,7 +37,7 @@
 /* 기본정보 (제목) */
 .signup_form_default_info_title_content{
     height: 40px;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 1px solid #f4f4f4;
 }
 .signup_form_default_info_title{
     font-size: 17px;
@@ -45,56 +45,272 @@
     font-family: "Noto Sans KR", sans-serif;
 }
 
-
 .signup_form_default_info_content{
-    /* height: 500px; */
-}
-/* 기본정보 (아이디) */
-.signup_form_default_info_id_content{
     height: 50px;
+    display: flex;
 }
-.signup_form_default_info_id_title_content{
+/* 기본정보 (주제) */
+.signup_form_default_info_subject_content{
     width: 120px;
     padding-left: 15px;
     font-size: 12px;
     font-family: "Noto Sans KR", sans-serif;
     font-weight: 400;
     display: flex;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 1px solid #f4f4f4;
 }
-.signup_form_default_info_id_title_icon{
+.signup_form_default_info_subject_icon{
     width: 7px;
     padding-top: 7px;
 }
-.signup_form_default_info_id_title{
+.signup_form_default_info_subject{
     height: 50px;
     display: flex;
     align-items: center;
     color: #5e5e5e;
 }
-.signup_form_default_info_id_input_content{
+/* 기본정보 (아이디) */
+.signup_form_default_info_id_input_container{
     width: 760px;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 1px solid #f4f4f4;
     padding: 10px 17px;
+    display: flex;
+}
+.signup_form_default_info_id_input_content{
+    width: 200px;
 }
 .signup_form_default_info_id_input{
     width: 200px;
-    height: 27px;
-    border: 1px solid rgba(0,0,0,0.1);
+    height: 30px;
+    border: 1px solid #dedede;
     padding-left: 10px;
     outline: none;
     font-size: 12px;
     color: #717171;
     font-family: "Noto Sans KR", sans-serif;
 }
+.signup_form_default_info_id_input_copy_content{
+    width: 70px;
+    height: 30px;
+    background-color: rgba(0,0,0,0.2);
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.signup_form_default_info_id_input_copy{
+    font-size: 12px;
+    color: white;
+    font-weight: 500;
+    font-family: "Noto Sans KR", sans-serif;
+}
+.signup_form_default_info_id_input_explain_content{
+    margin-left: 5px;
+    display: flex;
+    align-items: center;
+}
+.signup_form_default_info_id_input_explain{
+    font-size: 12px;
+    color: #B2B2B2;
+    font-family: "Noto Sans KR", sans-serif;
+}
+/* 기본정보 (비밀번호) */
+.signup_form_default_info_pwd_input_container{
+    width: 760px;
+    border-bottom: 1px solid #f4f4f4;
+    padding: 10px 17px;
+    display: flex;
+}
+.signup_form_default_info_pwd_input_content{
+    width: 200px;
+}
+.signup_form_default_info_pwd_input{
+    width: 200px;
+    height: 30px;
+    border: 1px solid #dedede;
+    padding-left: 10px;
+    outline: none;
+    font-size: 12px;
+    color: #717171;
+    font-family: "Noto Sans KR", sans-serif;
+}
+.signup_form_default_info_pwd_input_explain_content{
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+}
+.signup_form_default_info_pwd_input_explain{
+    font-size: 12px;
+    color: #B2B2B2;
+    font-family: "Noto Sans KR", sans-serif;
+}
+/* 기본정보 (비밀번호 확인) */
+.signup_form_default_info_pwd_check_input_container{
+    width: 760px;
+    border-bottom: 1px solid #f4f4f4;
+    padding: 10px 17px;
+    display: flex;
+}
+.signup_form_default_info_pwd_check_input_content{
+    width: 200px;
+}
+.signup_form_default_info_pwd_check_input{
+    width: 200px;
+    height: 30px;
+    border: 1px solid #dedede;
+    padding-left: 10px;
+    outline: none;
+    font-size: 12px;
+    color: #717171;
+    font-family: "Noto Sans KR", sans-serif;
+}
+/* 기본정보 (성명) */
+.signup_form_default_info_name_input_container{
+    width: 760px;
+    border-bottom: 1px solid #f4f4f4;
+    padding: 10px 17px;
+    display: flex;
+}
+.signup_form_default_info_name_input_content{
+    width: 200px;
+}
+.signup_form_default_info_name_input{
+    width: 200px;
+    height: 30px;
+    border: 1px solid #dedede;
+    padding-left: 10px;
+    outline: none;
+    font-size: 12px;
+    color: #717171;
+    font-family: "Noto Sans KR", sans-serif;
+}
+.signup_form_default_info_name_input_explain_content{
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+}
+.signup_form_default_info_name_input_explain{
+    font-size: 12px;
+    color: #B2B2B2;
+    font-family: "Noto Sans KR", sans-serif;
+}
+/* 기본정보 (휴대전화) */
+.signup_form_default_info_phone_input_container{
+    width: 760px;
+    border-bottom: 1px solid #f4f4f4;
+    padding: 10px 17px;
+    display: flex;
+}
+.signup_form_default_info_phone_first_input_content{
+    width: 60px;
+    height: 30px;
+    font-size: 13px;
+    border: 1px solid #dedede;
+    color: #717171;
+    outline: none;
+}
 
+.signup_form_default_info_phone_second_input{
+    width: 60px;
+    height: 30px;
+    border: 1px solid #dedede;
+    outline: none;
+    padding: 0 10px;
+    font-size: 12px;
+    color: #717171;
+}
+.signup_form_default_info_phone_third_input{
+    width: 60px;
+    height: 30px;
+    border: 1px solid #dedede;
+    outline: none;
+    padding: 0 10px;
+    font-size: 12px;
+    color: #717171;
+}
+.signup_form_default_info_phone_input_blank_content{
+    width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.signup_form_default_info_phone_input_blank{
+    color: rgba(0,0,0,0.5);
+}
+
+
+
+/* 회원가입 폼(연령제한) */
+.signup_form_age_info_container{
+    margin-top: 70px;
+}
+/* 연령제한(제목) */
+.signup_form_age_info_title_content{
+    height: 40px;
+    border-bottom: 1px solid #f4f4f4;
+}
+.signup_form_age_info_title{
+    font-size: 17px;
+    font-weight: 500;
+    font-family: "Noto Sans KR", sans-serif;
+}
+/* 연령제한(동의) */
+.signup_form_age_info_agree_container{
+    height: 40px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #f4f4f4;
+}
+.signup_form_age_info_agree_check_content{
+    height: 20px;
+    width: 20px;
+    margin-left: 15px;
+}
+.signup_form_age_info_agree{
+    color: #717171;
+    font-size: 12px;
+    font-family: "Noto Sans KR", sans-serif;
+}
 
 
 
 /* 회원가입 폼(선택정보) */
 .signup_form_select_info_container{
-
+    margin-top: 70px;
 }
+/* 선택정보(제목) */
+.signup_form_select_info_title_content{
+    height: 40px;
+    border-bottom: 1px solid #f4f4f4;
+}
+.signup_form_select_info_title{
+    font-size: 17px;
+    font-weight: 500;
+    font-family: "Noto Sans KR", sans-serif;
+}
+/* 선택정보(주소) */
+.signup_form_select_info_address_container{
+    width: 880px;
+    height: 120px;
+    border-bottom: 1px solid #f4f4f4;
+    display: flex;
+}
+.signup_form_select_info_address_subject_content{
+    width: 120px;
+    padding-left: 15px;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    color: #5e5e5e;
+    font-family: "Noto Sans KR", sans-serif;
+}
+.signup_form_select_info_address_content{
+    width: 760px;
+    padding: 10px 17px;
+}
+
+/* 선택정보(생년월일) */
+
 
 
 
