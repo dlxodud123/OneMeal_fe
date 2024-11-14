@@ -2,7 +2,8 @@ import './../css/signup_form.css';
 import Header from '../../common/header/js/header';
 import Footer from '../../common/footer/js/footer';
 import { MyContext } from '../../App';
-import { useContext, useRef } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
+import axios from 'axios';
 
 const Signup_form = () => {
     const {api} = useContext(MyContext);
@@ -10,7 +11,6 @@ const Signup_form = () => {
     // 우편번호api
     const zonecodeRef = useRef(null);
     const addressRef = useRef(null);
-
     const openDaumPostcode = () => {
         new window.daum.Postcode({
             oncomplete: function (data) {
@@ -31,14 +31,17 @@ const Signup_form = () => {
         years.push(year);
     }
     const months = [];
-    for (let month = 12; month >= 1; month--) {
+    for (let month = 1; month <= 12; month++) {
         months.push(month);
     }
     const days = [];
-    for (let day = 31; day >= 1; day--) {
+    for (let day = 1; day <= 31; day++) {
         days.push(day);
     }
-
+    // 뒤로가기 버튼
+    const handleBack = () => {
+        window.history.back();  // 브라우저의 뒤로 가기 기능을 실행
+    };
     // 휴대전화 입력 focus
     const phoneSecondRef = useRef(null);
     const handlePhoneSecondChange = (e) => {
@@ -54,6 +57,103 @@ const Signup_form = () => {
             }
         }
     }
+
+    // 아이디 중복확인
+    let [idValue, setIdValue] = useState('');
+    let [id, setId] = useState('');
+
+    const handleIdChange = (e) => {
+        setIdValue(e.target.value);
+    }
+
+    let [idCopyData, setIdCopyData] = useState(null); // 데이터를 저장할 상태
+    let [idCopyLoading, setIdCopyLoading] = useState(true); // 로딩 상태
+    let [idCopyError, setIdCopyError] = useState(null); // 에러 상태
+    const fetchIdCopy = async () => {
+        console.log("아이디 : ", idValue);
+
+        if (idValue.length == 0) { alert("아이디를 입력해주세요."); return; }
+        if (idValue.length <= 5) { alert("아이디는 6자 이상이어야 합니다."); return; }
+
+        setIdCopyLoading(true); // 로딩 시작
+        try {
+            const response = await axios.get('http://3.34.144.197:8081/api/json', {
+                headers: {
+                    'Content-Type': 'application/json', // 텍스트 형식으로 응답 받기
+                },
+            });
+
+            // status 확인
+            console.log("status Code : ", response.status);
+            console.log("Status Text:", response.data);
+
+            if (response.status === 200) {
+                // 성공적인 요청인 경우 (status 200)
+                setId(idValue); // 최종
+                setIdCopyData(response.data); // 서버에서 반환한 데이터 설정
+            } else if (response.status === 401) {
+                // 인증 실패 등의 상황 (status 401)
+                setIdCopyError("인증에 실패했습니다. 이메일과 비밀번호를 확인하세요.");
+            } else {
+                // 그 외의 에러
+                throw new Error(`Error: ${response.status} : ${response.statusText}`);
+            }
+            
+        } catch (error) {
+            setIdCopyError(error.message); // 에러 메시지 설정
+        } finally {
+            setIdCopyLoading(false); // 로딩 종료
+        }
+    }
+
+    // 비밀번호 값
+    let [password, setPassword] = useState('');
+
+    // 비밀번호 확인 값
+    let [passwordCheck, setPasswordCheck] = useState('');
+
+    // 성명 값
+    let [name, setName] = useState('');
+
+    // 휴대전화 값
+    let [phone, setPhone] = useState('');
+
+    // 연령제한 값
+    let [ageLimit, setAgeLimit] = useState(false);
+
+    // 주소 값
+    let [address, setAddress] = useState('');
+
+    // 생년월일 값
+    let [birthYear, setBirthYear] = useState('');
+    let [birthMonth, setBirthMonth] = useState('');
+    let [birthDay, setBirthDay] = useState('');
+    let [birth, setBirth] = useState('');
+    const handleBirthYearChange = (e) => { setBirthYear(e.target.value); }
+    const handleBirthMonthChange = (e) => { setBirthMonth(e.target.value); }
+    const handleBirthDayChange = (e) => { setBirthDay(e.target.value); }
+    const date = new Date(Date.UTC(birthYear, birthMonth - 1 , birthDay ));
+    const formattedDate = date.toISOString().split('T')[0];
+    useEffect(() => {
+        setBirth(formattedDate);
+    }, [formattedDate]);
+    useEffect(() => {
+        console.log(birth);
+    }, [birth])
+
+    // 성별 값
+    let [gender, setGender] = useState('F');
+    const handleGenderChange = (e) => { setGender(e.target.value); }
+    useEffect(() => {
+        console.log(gender);
+    }, [gender]);
+
+
+
+    // 최종 회원가입
+    useEffect(() => {
+
+    }, [])
 
     return(
         <div className='signup_form_container'>
@@ -80,13 +180,13 @@ const Signup_form = () => {
                                 </th>
                                 <td className='signup_form_default_info_id_input_container'>
                                     <div className='signup_form_default_info_id_input_content'>
-                                        <input className='signup_form_default_info_id_input' type='text'></input>
+                                        <input onChange={handleIdChange} className='signup_form_default_info_id_input' type='text' maxLength={20}></input>
                                     </div>
-                                    <div className='signup_form_default_info_id_input_copy_content'>
-                                        <label className='signup_form_default_info_id_input_copy'>중복확인</label>
+                                    <div onClick={fetchIdCopy} className='signup_form_default_info_id_input_copy_content'>
+                                        중복확인
                                     </div>
                                     <div className='signup_form_default_info_id_input_explain_content'>
-                                        <label className='signup_form_default_info_id_input_explain'>6~12자의 문자를 입력해야 합니다.</label>
+                                        6~20자의 문자를 입력해야 합니다.
                                     </div>
                                 </td>
                             </tr>
@@ -213,7 +313,7 @@ const Signup_form = () => {
                             </div>
                             <div className='signup_form_select_info_birth_content'>
                                 <div style={{display:"flex"}}>
-                                    <select className='signup_form_select_info_birth'>
+                                    <select onChange={handleBirthYearChange} className='signup_form_select_info_birth'>
                                         <option value=""></option>
                                         {years.map((year) => (
                                             <option key={year} value={year}>
@@ -226,9 +326,9 @@ const Signup_form = () => {
                                     </div>
                                 </div>
                                 <div style={{display:"flex"}}>
-                                    <select className='signup_form_select_info_birth'>
+                                    <select onChange={handleBirthMonthChange} className='signup_form_select_info_birth'>
                                         <option value=""></option>
-                                        {[...months].reverse().map((month) => (
+                                        {months.map((month) => (
                                             <option key={month} value={month}>
                                                 {month}
                                             </option>
@@ -239,9 +339,9 @@ const Signup_form = () => {
                                     </div>
                                 </div>
                                 <div style={{display:"flex"}}>
-                                    <select className='signup_form_select_info_birth'>
+                                    <select onChange={handleBirthDayChange} className='signup_form_select_info_birth'>
                                         <option value=""></option>
-                                        {[...days].reverse().map((day) => (
+                                        {days.map((day) => (
                                             <option key={day} value={day}>
                                                 {day}
                                             </option>
@@ -261,7 +361,7 @@ const Signup_form = () => {
                             <div className='signup_form_select_info_gender_content'>
                                 <div style={{display:"flex"}}>
                                     <div className='signup_form_select_info_gender_choice_content'>
-                                        <input type='radio' name='gender' value="female" checked />
+                                        <input onChange={handleGenderChange} checked={gender === 'F'} type='radio' name='gender' value="F"  />
                                     </div>
                                     <div className='signup_form_select_info_gender_choice_serve'>
                                         여성
@@ -269,18 +369,18 @@ const Signup_form = () => {
                                 </div>
                                 <div style={{display:"flex"}}>
                                     <div className='signup_form_select_info_gender_choice_content'>
-                                        <input type='radio' name='gender' value="male" />
+                                        <input onChange={handleGenderChange} checked={gender === 'M'} type='radio' name='gender' value="M" />
                                     </div>
                                     <div className='signup_form_select_info_gender_choice_serve'>
                                         남성
                                     </div>
-                                </div>
+                                </div>  
                             </div>             
                         </div>
                     </div>
                     
                     <div className='signup_form_btn_container'>
-                        <div className='signup_from_back_btn'>
+                        <div onClick={handleBack} className='signup_from_back_btn'>
                             뒤로
                         </div>
                         <div className='signup_form_btn_gap'></div>
