@@ -229,7 +229,4 @@ input[type="text" i] {
     padding-bottom: 0px;
     /* padding-right: 0px; */
 }
-/* input(radio) 기본 diplay 삭제 */
-input[type="radio" i] {
-    display: none;
-}
+

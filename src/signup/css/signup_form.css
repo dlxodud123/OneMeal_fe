@@ -308,9 +308,169 @@
     width: 760px;
     padding: 10px 17px;
 }
-
+.signup_form_select_info_address_btn_content{
+    display: flex;
+}
+.signup_form_select_info_address_zonecode{
+    width: 150px;
+    height: 28px;
+    border: 1px solid #dedede;
+    outline: none;
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 12px;
+    color: #717171;
+    padding: 0px 2px 0px 10px;
+}
+.singup_form_select_info_address_btn{
+    width: 70px;
+    height: 28px;
+    background-color: rgba(0,0,0,0.2);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-family: "Noto Sans KR", sans-serif;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.signup_form_select_info_address{
+    width: 550px;
+    height: 28px;
+    margin-top: 7px;
+    border: 1px solid #dedede;
+    outline: none;
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 12px;
+    color: #717171;
+    padding: 0px 2px 0px 10px;
+}
+.signup_form_select_info_detail_address{
+    width: 550px;
+    height: 28px;
+    margin-top: 7px;
+    border: 1px solid #dedede;
+    outline: none;
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 12px;    
+    color: #717171;
+    padding: 0px 2px 0px 10px;
+}
 /* 선택정보(생년월일) */
+.signup_form_select_info_birth_container{
+    width: 880px;
+    height: 50px;
+    border-bottom: 1px solid #f4f4f4;
+    display: flex;
+}
+.signup_form_select_info_birth_subject_content{
+    width: 120px;
+    padding-left: 15px;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    color: #5e5e5e;
+    font-family: "Noto Sans KR", sans-serif;
+}
+.signup_form_select_info_birth_content{
+    padding: 10px 17px;
+    display: flex;
+}
+.signup_form_select_info_birth_year_content{
+    display: flex;
+}
+.signup_form_select_info_birth{
+    width: 70px;
+    height: 30px;
+    font-size: 13px;
+    border: 1px solid #dedede;
+    color: #717171;
+    outline: none;
+    font-family: "Noto Sans KR", sans-serif;
+}
+.signup_form_select_info_birth_serve{
+    width: 25px;
+    font-size: 13px;
+    color: #717171;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Noto Sans KR", sans-serif;
+}
+/* 선택정보(성별) */
+.signup_form_select_info_gender_container{
+    width: 880px;
+    height: 50px;
+    border-bottom: 1px solid #f4f4f4;
+    display: flex;
+}
+.signup_form_select_info_gender_subject_content{
+    width: 120px;
+    padding-left: 15px;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    color: #5e5e5e;
+    font-family: "Noto Sans KR", sans-serif;
+}
+.signup_form_select_info_gender_content{
+    padding: 10px 17px;
+    display: flex;
+}
+.signup_form_select_info_gender_choice_content{
+    height: 30px;
+    margin-left: 15px;
+    margin-right: 3px;
+    display: flex;
+    align-items: center;
+}
+.signup_form_select_info_gender_choice_serve{
+    height: 30px;
+    font-size: 12px;
+    color: #5e5e5e;
+    display: flex;
+    align-items: center;
+    font-family: "Noto Sans KR", sans-serif;
+}
 
+
+
+/* 회원가입 */
+.signup_form_btn_container{
+    height: 60px;
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+}
+.signup_from_back_btn{
+    width: 150px;
+    height: 40px;
+    display: flex;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 7px;
+    justify-content: center;
+    align-items: center;
+    font-family: "Noto Sans KR", sans-serif;
+    color: white;
+    background-color: rgba(0,0,0,0.2);
+}
+.signup_form_btn_gap{
+    width: 10px;
+}
+.signup_form_btn{
+    width: 150px;
+    height: 40px;
+    display: flex;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 7px;
+    justify-content: center;
+    align-items: center;
+    font-family: "Noto Sans KR", sans-serif;
+    color: white;
+    background-color: #003366;
+}
 
 
 
