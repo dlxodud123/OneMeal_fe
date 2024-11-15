@@ -15,7 +15,7 @@ import Test from './test/test';
 export const MyContext = createContext();
 
 const MyProvider = ({ children }) => {
-  const [api] = useState('localhost:8080/api');
+  const [api] = useState('http://43.202.68.231:8081/api');
 
   return (
       <MyContext.Provider value={{ api }}>
