@@ -130,6 +130,9 @@
     font-size: 12px;
     color: #717171;
     font-family: "Noto Sans KR", sans-serif;
+    -webkit-text-security: disc; /* Safari */
+    -moz-appearance: textfield; /* Firefox */
+    appearance: textfield; /* Chrome */
 }
 .signup_form_default_info_pwd_input_explain_content{
     margin-left: 10px;
@@ -160,6 +163,9 @@
     font-size: 12px;
     color: #717171;
     font-family: "Noto Sans KR", sans-serif;
+    -webkit-text-security: disc; /* Safari */
+    -moz-appearance: textfield; /* Firefox */
+    appearance: textfield; /* Chrome */
 }
 /* 기본정보 (성명) */
 .signup_form_default_info_name_input_container{

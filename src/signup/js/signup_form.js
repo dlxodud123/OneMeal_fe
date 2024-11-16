@@ -3,10 +3,12 @@ import Header from '../../common/header/js/header';
 import Footer from '../../common/footer/js/footer';
 import { MyContext } from '../../App';
 import { useContext, useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const Signup_form = () => {
     const {api} = useContext(MyContext);
+    const navigate = useNavigate();
 
     // 생년월일 반복문
     const years = [];
@@ -39,7 +41,6 @@ const Signup_form = () => {
     const fetchIdCopy = async () => {
         if (idValue.length == 0) { alert("아이디를 입력해주세요."); setId(''); return; }
         if (idValue.length <= 5) { alert("아이디는 6자 이상이어야 합니다."); setId(''); return; }
-        // alert("사용가능한 아이디입니다.");
         
         setIdCopyLoading(true); // 로딩 시작
         try {
@@ -49,25 +50,26 @@ const Signup_form = () => {
                 }
             });
             
-            // status 확인
-            console.log("status Code : ", response.status);
-            console.log("Status Text:", response.data);
-            
             if (response.status === 200) {
                 // 성공적인 요청인 경우 (status 200)
+                console.log("status Code : ", response.status);
+                console.log("Status Text:", response.data);
                 setId(idValue); // 최종
                 alert("사용가능한 아이디입니다.");
-                setIdCopyData(response.data); // 서버에서 반환한 데이터 설정
-            } else if (response.status === 401) {
-                // 인증 실패 등의 상황 (status 401)
-                setIdCopyError("인증에 실패했습니다. 이메일과 비밀번호를 확인하세요.");
-            } else {
-                // 그 외의 에러
-                throw new Error(`Error: ${response.status} : ${response.statusText}`);
-            }
-            
+            } 
         } catch (error) {
-            setIdCopyError(error.message); // 에러 메시지 설정
+            if (error.response) {
+                // 서버에서 응답을 보냈지만 status가 2xx가 아닌 경우
+                console.log("status Code : ", error.response.status);
+                console.log("Status Text:", error.response.data);
+                alert("중복된 아이디입니다.");
+            } else if (error.request) {
+                // 요청이 만들어졌지만 서버로부터 응답을 받지 못한 경우
+                console.log("No response received:", error.request);
+            } else {
+                // 요청 설정 중에 발생한 에러
+                console.log("Error:", error.message);
+            }
         } finally {
             setIdCopyLoading(false); // 로딩 종료
         }
@@ -176,13 +178,106 @@ const Signup_form = () => {
     }, [gender]);
 
 
-
     // 최종 회원가입
-    const singupBtn = () => {
+    const singupBtn = async () => {
         if (id) {
-            // alert("사용 가능한 아이디입니다.");
             if (password) {
-                alert("비밀번호를 입력해주세요.")
+                if (password.length >= 8) {
+                    if (passwordCheck) {
+                        if (password === passwordCheck) {
+                            if (name) {
+                                if (phone) {
+                                    if (ageLimit) {
+                                        if ((address && detailAddress === '') || (address == '' && detailAddress)) {
+                                            alert("주소를 모두 작성해주세요.")
+                                        }else{
+                                            if ((birthYear && birthMonth && birthDay) || (birthYear == '' && birthMonth == '' && birthDay == '')) {
+                                                const data = {
+                                                    username : `${id}`,
+                                                    name : `${name}`,
+                                                    phoneNumber : `${phone}`,
+                                                    birthDate : `${birth}`,
+                                                    gender : `${gender}`,
+                                                    zoneCode : `${zonecode}`,
+                                                    address : `${address}`,
+                                                    detailAddress : `${detailAddress}`,
+                                                    loginType : `default`,
+                                                    password : `${password}`,
+                                                };
+                                                fetch('http://43.202.68.231:8081/api/member/signup/', {
+                                                    method: 'POST',
+                                                    headers: {
+                                                        'Content-Type': 'application/json'
+                                                    },
+                                                    body: JSON.stringify(data) // JSON 형식으로 데이터 전송
+                                                })
+                                                    .then(data => {
+                                                        console.log(data.status); // staus 확인
+                                                        console.log(data) // text 확인
+                                                        alert("회원가입이 완료되었습니다.");
+                                                    })
+                                                    .catch(error => {
+                                                        console.error('회원가입 실패:', error);
+                                                        alert('회원가입 실패');
+                                                    });
+                                        
+                                                // try {   
+                                                //     console.log("asdf");
+                                                //     const response = await axios.post(`${api}/member/signup`, 
+                                                //         data
+                                                //     , {
+                                                //         headers: {
+                                                //             'Content-Type': 'application/json', 
+                                                //         }
+                                                //     });
+                                                    
+                                                //     if (response.status === 200) {
+                                                //         // 성공적인 요청인 경우 (status 200)
+                                                //         console.log("status Code : ", response.status);
+                                                //         console.log("Status Text:", response.data);
+                                                //         setId(idValue); // 최종
+                                                //         alert("사용가능한 아이디입니다.");
+                                                //     } 
+                                                // } catch (error) {
+                                                //     if (error.response) {
+                                                //         // 서버에서 응답을 보냈지만 status가 2xx가 아닌 경우
+                                                //         console.log("status Code : ", error.response.status);
+                                                //         console.log("Status Text:", error.response.data);
+                                                //         alert("중복된 아이디입니다.");
+                                                //     } else if (error.request) {
+                                                //         // 요청이 만들어졌지만 서버로부터 응답을 받지 못한 경우
+                                                //         console.log("No response received:", error.request);
+                                                //     } else {
+                                                //         // 요청 설정 중에 발생한 에러
+                                                //         console.log("Error:", error.message);
+                                                //     }
+                                                // } finally {
+                                                //     setIdCopyLoading(false); // 로딩 종료
+                                                // }
+                                            }else{
+                                                alert("생년월일을 모두 입력해주세요");
+                                            }
+                                        }
+                                    }else{
+                                        alert("연령 제한에 동의해주세요.");
+                                    }
+                                }else{
+                                    alert("휴대전화 번호를 모두 입력해주세요.");
+                                }
+                            }else{
+                                alert("성명을 입력해주세요.");
+                            }
+                        }else{
+                            alert("비밀번호와 비밀번호 확인이 일치하지 않습니다. 다시 입력해주세요.");
+                        }
+                    }else{
+                        alert("비밀번호 확인란을 입력해주세요.");
+                    }
+                }else{
+                    alert("비밀번호는 최소 8자 이상이어야 합니다. 다시 입력해주세요.");
+                }
+            }else{
+                alert("비밀번호를 입력해주세요.");
             }
         }else{
             alert("아이디 중복확인을 해주세요.");
@@ -235,7 +330,7 @@ const Signup_form = () => {
                                 </th>
                                 <td className='signup_form_default_info_pwd_input_container'> 
                                     <div className='signup_form_default_info_pwd_input_content'>
-                                        <input onChange={(e) => {setPassword(e.target.value);}} className='signup_form_default_info_pwd_input' type='password' maxLength={16}></input>
+                                        <input onChange={(e) => {setPassword(e.target.value);}} className='signup_form_default_info_pwd_input' type='text' maxLength={16}></input>
                                     </div>
                                     <div className='signup_form_default_info_pwd_input_explain_content'>
                                         <label className='signup_form_default_info_pwd_input_explain'>8~16자의 문자를 입력해야 합니다.</label>
@@ -253,7 +348,7 @@ const Signup_form = () => {
                                 </th>
                                 <td className='signup_form_default_info_pwd_check_input_container'> 
                                     <div className='signup_form_default_info_pwd_check_input_content'>
-                                        <input onChange={(e) => {setPasswordCheck(e.target.value);}} className='signup_form_default_info_pwd_check_input' type='password' maxLength={16}></input>
+                                        <input onChange={(e) => {setPasswordCheck(e.target.value);}} className='signup_form_default_info_pwd_check_input' type='text' maxLength={16}></input>
                                     </div>
                                 </td>
                             </tr>

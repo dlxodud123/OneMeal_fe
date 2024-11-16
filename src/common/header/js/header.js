@@ -6,7 +6,6 @@ import { MyContext } from '../../../App';
 
 const Header = () => {
     const {api} = useContext(MyContext)
-
     const navigate = useNavigate();
 
     return(

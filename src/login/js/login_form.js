@@ -9,6 +9,26 @@ const Login_form = () => {
     const {api} = useContext(MyContext);
     const navigate = useNavigate();
 
+    const handleIdFindWindow = () => {
+        window.open(
+            `/idfind`,
+            "_blank",
+            "width=550,height=370,top=200,left=300"
+        );
+    }
+
+    const handlePwdFindWindow = () => {
+        window.open(
+            `/pwdfind`,
+            "_blank",
+            "width=400,height=300,top=300,left=400"
+        );
+    }
+
+    const handleSignupNavigate = () => {
+        navigate('/signup')
+    }
+
     let [googleLogin, setGoogleLogin] = useState(false);
     let [kakaoLogin, setKakaoLogin] = useState(false);
     let [naverLogin, setNaverLogin] = useState(false);
@@ -81,19 +101,19 @@ const Login_form = () => {
                             </div>
                             <div className='login_form_default_find_content'>
                                 <div className='login_form_default_find_id_content'>
-                                    <label className='login_form_default_find_id'>아이디 찾기</label>
+                                    <label onClick={handleIdFindWindow} className='login_form_default_find_id'>아이디 찾기</label>
                                 </div>
                                 <div className='login_form_default_pipe_content'>
                                     <label className='login_form_default_pipe'>|</label>
                                 </div>
                                 <div className='login_form_default_find_pwd_content'>
-                                    <label className='login_form_default_find_pwd'>비밀번호 찾기</label>
+                                    <label onClick={handlePwdFindWindow} className='login_form_default_find_pwd'>비밀번호 찾기</label>
                                 </div>
                                 <div className='login_form_default_pipe_content'>
                                     <label className='login_form_default_pipe'>|</label>
                                 </div>
                                 <div className='login_form_default_find_signup_content'>
-                                    <label className='login_form_default_find_signup'>회원가입</label>
+                                    <label onClick={handleSignupNavigate} className='login_form_default_find_signup'>회원가입</label>
                                 </div>
                             </div>
                         </div>

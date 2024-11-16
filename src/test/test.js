@@ -4,49 +4,17 @@ import { useState } from 'react';
 
 const Test = () => {
 
-    let [data, setData] = useState(null); // 데이터를 저장할 상태
-    let [loading, setLoading] = useState(true); // 로딩 상태
-    let [error, setError] = useState(null); // 에러 상태
-
-    const fetchData = async () => {
-
-        console.log("시작");
-
-        setLoading(true); // 로딩 시작
-        try {
-            const response = await axios.get('http://13.209.12.149:8081/api/test', {
-                headers: {
-                    'Content-Type': 'application/json', // 텍스트 형식으로 응답 받기
-                },
-            });
-
-            // status 확인
-            console.log("status Code : ", response.status);
-            console.log("Status Text:", response.data);
-
-            if (response.status === 200) {
-                // 성공적인 요청인 경우 (status 200)
-                setData(response.data); // 서버에서 반환한 데이터 설정
-            } else if (response.status === 401) {
-                // 인증 실패 등의 상황 (status 401)
-                setError("인증에 실패했습니다. 이메일과 비밀번호를 확인하세요.");
-            } else {
-                // 그 외의 에러
-                throw new Error(`Error: ${response.status} : ${response.statusText}`);
-            }
-            
-        } catch (error) {
-            setError(error.message); // 에러 메시지 설정
-        } finally {
-            setLoading(false); // 로딩 종료
-        }
+    const openSmallWindow = (id) => {
+        window.open(
+            `/idfind/${id}`, // 새 창에서 열릴 경로
+            "_blank",
+            "width=400,height=300,top=300,left=400"
+        );
     };
-    
-    
     return(
-        <>
-         <button onClick={() => fetchData()}>클릭</button>
-        </>
+        <div>
+            <button onClick={() => openSmallWindow('id')}>열기</button>
+        </div>
     )
 }
 

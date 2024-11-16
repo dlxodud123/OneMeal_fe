@@ -62,7 +62,7 @@ const Main_from = () => {
             <Main_search></Main_search>
             <Main_category></Main_category>
             <Main_ranking></Main_ranking>
-            <button style={{width:"100px", height:"100px"}} onClick={() => fetchData()}>클릭</button>
+            {/* <button style={{width:"100px", height:"100px"}} onClick={() => fetchData()}>클릭</button> */}
             <Footer></Footer>
         </div>
     )
