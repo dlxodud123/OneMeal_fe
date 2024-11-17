@@ -1,5 +1,5 @@
 import './../css/header.css';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { IoSearch } from "react-icons/io5";
 import { useNavigate } from 'react-router-dom';
 import { MyContext } from '../../../App';
@@ -7,6 +7,12 @@ import { MyContext } from '../../../App';
 const Header = () => {
     const {api} = useContext(MyContext)
     const navigate = useNavigate();
+
+    let [searchBtn, setSearchBtn] = useState(false);
+
+    const handleSearchChange = () => {
+        setSearchBtn(prevState => !prevState);
+    }
 
     return(
         <header className='header_container'>
@@ -32,7 +38,18 @@ const Header = () => {
                         </div>
                     </div>
                     <div className='header_search_content'>
-                        <IoSearch className='header_search' />
+                        <IoSearch onClick={handleSearchChange} className='header_search' />
+                    </div>
+                </div>
+            </div>
+            <div className={`header_search_ani_container ${searchBtn ? 'visible' : ''}`}>
+                <div className='header_search_ani_content'>
+                    <input className='header_search_ani_input'></input>
+                    <div className='header_search_ani_input_icon_content'>
+                        <IoSearch className='header_search_ani_input_icon'></IoSearch>
+                    </div>
+                    <div className='header_search_ani_close_icon_content'>
+                        <img onClick={() => {setSearchBtn(false)}} style={{cursor:"pointer"}} src='https://2bob.co.kr/skin/nodskin_argio/images/icon_search_close.jpg'></img>
                     </div>
                 </div>
             </div>
