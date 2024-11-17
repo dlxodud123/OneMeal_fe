@@ -34,7 +34,7 @@ function App() {
           <Route path='/' element={<Main_from></Main_from>}></Route>
           <Route path='/login' element={<Login_form></Login_form>}></Route>
           <Route path='/idfind' element={<Id_find></Id_find>}></Route>
-          <Route path='/idfind' element={<Pwd_find></Pwd_find>}></Route>
+          <Route path='/pwdfind' element={<Pwd_find></Pwd_find>}></Route>
           <Route path='/google/callback' element={<Google_callback></Google_callback>}></Route>
           <Route path='/kakao/callback' element={<Kakao_callback></Kakao_callback>}></Route>
           <Route path='/naver/callback' element={<Naver_callback></Naver_callback>}></Route>

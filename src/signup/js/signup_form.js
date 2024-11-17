@@ -204,46 +204,62 @@ const Signup_form = () => {
                                                     loginType : `default`,
                                                     password : `${password}`,
                                                 };
-                                                fetch('http://43.202.68.231:8081/api/member/signup/', {
-                                                    method: 'POST',
-                                                    headers: {
-                                                        'Content-Type': 'application/json'
-                                                    },
-                                                    body: JSON.stringify(data) // JSON 형식으로 데이터 전송
-                                                })
-                                                    .then(data => {
-                                                        console.log(data.status); // staus 확인
-                                                        console.log(data) // text 확인
+                                                try {
+                                                    // Axios POST 요청
+                                                    const response = await axios.post(`${api}/member/signup/`,
+                                                        data, 
+                                                        {headers: {
+                                                            'Content-Type': 'application/json' // 요청 헤더 설정
+                                                        }}
+                                                    );
+                                                    
+                                                    if (response.status === 200) {
+                                                        // 응답 성공 시
+                                                        console.log(response.status); // status 확인
+                                                        console.log(response.data); // 응답 데이터 확인
                                                         alert("회원가입이 완료되었습니다.");
-                                                    })
-                                                    .catch(error => {
-                                                        console.error('회원가입 실패:', error);
-                                                        alert('회원가입 실패');
-                                                    });
+                                                        navigate('/login')
+                                                    }
+                                                } catch (error) {
+                                                    // 응답 실패 또는 네트워크 오류 시
+                                                    if (error.response) {
+                                                        // 서버가 응답했으나 상태 코드가 2xx가 아님
+                                                        console.error('서버 응답 오류:', error.response.status);
+                                                        console.error('응답 메시지:', error.response.data);
+                                                        alert('회원가입 실패: 서버 응답 오류');
+                                                    } else if (error.request) {
+                                                        // 요청이 서버에 도달하지 못한 경우
+                                                        console.error('요청 실패: 서버가 응답하지 않음', error.request);
+                                                        alert('회원가입 실패: 서버가 응답하지 않습니다.');
+                                                    } else {
+                                                        // 요청 설정 중 문제 발생
+                                                        console.error('요청 설정 오류:', error.message);
+                                                        alert('회원가입 실패: 요청 설정 중 문제가 발생했습니다.');
+                                                    }
+                                                }
                                         
                                                 // try {   
                                                 //     console.log("asdf");
                                                 //     const response = await axios.post(`${api}/member/signup`, 
-                                                //         data
-                                                //     , {
-                                                //         headers: {
+                                                //         data, 
+                                                //         {headers: {
                                                 //             'Content-Type': 'application/json', 
-                                                //         }
-                                                //     });
+                                                //         }}
+                                                //     );
                                                     
                                                 //     if (response.status === 200) {
                                                 //         // 성공적인 요청인 경우 (status 200)
                                                 //         console.log("status Code : ", response.status);
                                                 //         console.log("Status Text:", response.data);
-                                                //         setId(idValue); // 최종
-                                                //         alert("사용가능한 아이디입니다.");
+                                                //         // setId(idValue); // 최종
+                                                //         // alert("사용가능한 아이디입니다.");
                                                 //     } 
                                                 // } catch (error) {
                                                 //     if (error.response) {
                                                 //         // 서버에서 응답을 보냈지만 status가 2xx가 아닌 경우
                                                 //         console.log("status Code : ", error.response.status);
                                                 //         console.log("Status Text:", error.response.data);
-                                                //         alert("중복된 아이디입니다.");
+                                                //         // alert("중복된 아이디입니다.");
                                                 //     } else if (error.request) {
                                                 //         // 요청이 만들어졌지만 서버로부터 응답을 받지 못한 경우
                                                 //         console.log("No response received:", error.request);
@@ -252,7 +268,7 @@ const Signup_form = () => {
                                                 //         console.log("Error:", error.message);
                                                 //     }
                                                 // } finally {
-                                                //     setIdCopyLoading(false); // 로딩 종료
+                                                //     // setIdCopyLoading(false); // 로딩 종료
                                                 // }
                                             }else{
                                                 alert("생년월일을 모두 입력해주세요");

@@ -4,10 +4,18 @@ import { MyContext } from '../../App';
 import { useNavigate } from 'react-router-dom';
 import Header from '../../common/header/js/header';
 import Footer from '../../common/footer/js/footer';
+import axios from 'axios';
 
 const Login_form = () => {
     const {api} = useContext(MyContext);
     const navigate = useNavigate();
+
+    let [id, setId] = useState('');
+    let [password, setPassword] = useState('');
+
+    useEffect(() => {
+        console.log(password)
+    }, [password])
 
     const handleIdFindWindow = () => {
         window.open(
@@ -21,12 +29,52 @@ const Login_form = () => {
         window.open(
             `/pwdfind`,
             "_blank",
-            "width=400,height=300,top=300,left=400"
+            "width=550,height=370,top=200,left=300"
         );
     }
 
     const handleSignupNavigate = () => {
         navigate('/signup')
+    }
+
+    const loginBtn = async () => {
+        const data = {
+            username : `${id}`,
+            password : `${password}`,
+        };
+        try {
+            // Axios POST 요청
+            const response = await axios.post(`${api}/member/login`,
+                data, 
+                {headers: {
+                    'Content-Type': 'application/json' // 요청 헤더 설정
+                }}
+            );
+            if (response.status === 200) {
+                // 응답 성공 시
+                console.log(response.status); // status 확인
+                console.log(response.data); // 응답 데이터 확인
+                console.log("토큰 값 : ", ); // 토큰값
+                alert("로그인이 완료되었습니다.");
+                navigate('/')
+            }
+        } catch (error) {
+            // 응답 실패 또는 네트워크 오류 시
+            if (error.response) {
+                // 서버가 응답했으나 상태 코드가 2xx가 아님
+                console.error('서버 응답 오류:', error.response.status);
+                console.error('응답 메시지:', error.response.data);
+                alert('회원가입 실패: 서버 응답 오류');
+            } else if (error.request) {
+                // 요청이 서버에 도달하지 못한 경우
+                console.error('요청 실패: 서버가 응답하지 않음', error.request);
+                alert('회원가입 실패: 서버가 응답하지 않습니다.');
+            } else {
+                // 요청 설정 중 문제 발생
+                console.error('요청 설정 오류:', error.message);
+                alert('회원가입 실패: 요청 설정 중 문제가 발생했습니다.');
+            }
+        }
     }
 
     let [googleLogin, setGoogleLogin] = useState(false);
@@ -88,14 +136,14 @@ const Login_form = () => {
                                 <div className='login_form_input_content'>
                                     <div className='login_form_default_input_id_content'>
                                         <label className='login_form_default_input_id_title'>아이디</label>
-                                        <input type='text' className='login_form_default_input_id'></input>
+                                        <input onChange={(e) => {setId(e.target.value)}} type='text' className='login_form_default_input_id'></input>
                                     </div>
                                     <div className='login_form_default_input_pwd_content'>
                                         <label className='login_form_default_input_pwd_title'>비밀번호</label>
-                                        <input type='text' className='login_form_default_input_pwd'></input>
+                                        <input onChange={(e) => {setPassword(e.target.value)}} type='text' className='login_form_default_input_pwd'></input>
                                     </div>
                                 </div>
-                                <div className='login_form_defualt_btn_content'>
+                                <div onClick={loginBtn} className='login_form_defualt_btn_content'>
                                     <label className='login_form_default_btn'>로그인</label>
                                 </div>  
                             </div>

@@ -1,0 +1,113 @@
+.pwd_find_container{
+    width: 100%;
+    height: 300px;
+}
+
+/* 제목 */
+.pwd_find_title_container{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+.pwd_find_title_content{
+    width: 70%;
+    height: 55px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: "Noto Sans KR", sans-serif;
+}
+.pwd_find_title_serve_content{
+    height: 45px;
+    text-align: center;
+    font-size: 12px;
+    color: #888;
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+/* 이름 & 아이디 */
+.pwd_find_content{
+    width: 100%;
+}
+.pwd_find_subject_content{
+    width: 70%;
+    height: 60px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+.pwd_find_subject{
+    width: 25%;
+    padding-left: 10px;
+    font-size: 13px;
+    font-family: "Noto Sans KR", sans-serif;
+}
+.pwd_find_input_content{
+    width: 75%;
+}
+.pwd_find_input{
+    width: 60%;
+    font-size: 13px;
+    color: rgba(0,0,0,0.7);
+    height: 27px;
+    border: 1px solid rgba(0,0,0,0.1);
+    outline: none;
+    padding: 0px 10px;
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+/* 버튼 */
+.pwd_find_btn_container{
+    width: 100%;
+    cursor: pointer;
+}
+.pwd_find_btn{
+    width: 21%;
+    height: 37px;
+    margin: 20px auto auto auto;
+    background-color: #003366;
+    color: white;
+    border-radius: 5px;
+    font-size: 13px;
+    font-family: "Noto Sans KR", sans-serif;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 실패 & 성공 */
+.pwd_find_fail_success_container{
+    width: 70%;
+    height: 120px;
+    margin: 15px auto auto auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(0,0,0,0.7);
+    font-weight: 500;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    font-family: "Noto Sans KR", sans-serif;
+}
+.pwd_find_ok_container{
+    width: 100%;
+    cursor: pointer;
+}
+.pwd_find_ok{
+    width: 21%;
+    height: 37px;
+    margin: 20px auto auto auto;
+    background-color: #003366;
+    color: white;
+    border-radius: 5px;
+    font-size: 13px;
+    font-family: "Noto Sans KR", sans-serif;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

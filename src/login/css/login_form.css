@@ -98,6 +98,9 @@
     font-family: "Noto Sans KR", sans-serif;
     outline: none;
     padding-left: 15px;
+    -webkit-text-security: disc; /* Safari */
+    -moz-appearance: textfield; /* Firefox */
+    appearance: textfield; /* Chrome */
 }
 /* 기본 (버튼) */
 .login_form_defualt_btn_content{
