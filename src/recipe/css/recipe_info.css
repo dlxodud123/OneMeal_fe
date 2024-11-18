@@ -1,0 +1,36 @@
+.recipe_info_conatiner{
+    width: 1080px;
+    margin: auto;
+}
+/* 제목 */
+.recipe_info_title_content{
+    font-size: 25px;
+    font-weight: bold;
+    color: #003366;
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+/* 정보 */
+.recipe_info_content{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+}
+.recipe_info_info_content{
+    width: 208px;
+}
+.recipe_info_info_img{
+    width: 208px;
+    height: 208px;
+}
+.recipe_info_info_text{
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 16px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 5px;
+    font-weight: 500;
+}
+
+/* pagination */

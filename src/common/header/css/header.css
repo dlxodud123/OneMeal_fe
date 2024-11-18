@@ -24,9 +24,8 @@
     align-items: center;
 }
 .header_menu_recipe{
-    color: #003366;
     font-size: 16px;
-    font-weight: bold;
+    font-weight: 500;
     font-family: "Noto Sans KR", sans-serif;
     cursor: pointer;
 }
@@ -36,9 +35,8 @@
     align-items: center;
 }
 .header_menu_ranking{
-    color: #003366;
     font-size: 16px;
-    font-weight: bold;
+    font-weight: 500;
     font-family: "Noto Sans KR", sans-serif;
     cursor: pointer;
 }
@@ -114,7 +112,7 @@
     z-index: 10;
     margin-top: 20px;
     overflow: hidden; /* 내용이 잘리도록 설정 */
-    transition: height 0.5s ease; /* height와 opacity가 서서히 변화 */
+    transition: height 0.8s ease; /* height와 opacity가 서서히 변화 */
     background-color: white;
 }
 
@@ -122,6 +120,7 @@
 .header_search_ani_container.visible {
     margin-top: 20px;
     height: 120px; /* 높이를 100px로 설정 */
+    border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 
 .header_search_ani_content{
@@ -148,6 +147,7 @@
     justify-content: center;
     align-items: center;
     background-color: #003366;
+    cursor: pointer;
 }
 .header_search_ani_input_icon{
     color: white;

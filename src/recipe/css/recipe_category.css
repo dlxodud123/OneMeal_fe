@@ -1,0 +1,62 @@
+.recipe_category_container{
+    width: 1080px;
+    margin: 60px auto auto auto;
+    border-top: 5px solid rgba(0,0,0,0.02);
+}
+.recipe_category_content{
+    height: 300px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    overflow: hidden;
+    transition: height 0.8s ease;
+}
+
+.recipe_category{
+    border: 0.1px solid rgba(0,0,0,0.1);
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.recipe_category_img{
+    width: 60px;
+    height: 36px;
+}
+.recipe_category_text{
+    margin-top: 8px;
+    font-size: 12px;
+    color: #888;
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+/* 접기 */
+.recipe_category_close_container{
+    width: 1080px;
+    height: 65px;
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+.recipe_category_close_content{
+    width: 110px;
+    height: 25px;
+    background-color: rgba(0,0,0,0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    color: white;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    cursor: pointer;
+}
+.recipe_category_colse_icon{
+    font-size: 20px;
+}
+.recipe_category_colse{
+    font-size: 12px;
+    font-weight: 500;
+    font-family: "Noto Sans KR", sans-serif;
+    cursor: pointer;
+}

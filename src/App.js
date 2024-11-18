@@ -10,6 +10,7 @@ import Google_callback from './callback/google/google_callback';
 import Kakao_callback from './callback/kakao/kakao_callback';
 import Naver_callback from './callback/naver/naver_callback';
 import Signup_form from './signup/js/signup_form';
+import Recipe_form from './recipe/js/recipe_form';
 
 import Test from './test/test';
 
@@ -39,6 +40,7 @@ function App() {
           <Route path='/kakao/callback' element={<Kakao_callback></Kakao_callback>}></Route>
           <Route path='/naver/callback' element={<Naver_callback></Naver_callback>}></Route>
           <Route path='/signup' element={<Signup_form></Signup_form>}></Route>
+          <Route path='/recipe' element={<Recipe_form></Recipe_form>}></Route>
 
           <Route path='/test' element={<Test></Test>}></Route>
         </Routes>

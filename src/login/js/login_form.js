@@ -81,14 +81,14 @@ const Login_form = () => {
     let [kakaoLogin, setKakaoLogin] = useState(false);
     let [naverLogin, setNaverLogin] = useState(false);
 
-    // 구글 로그인
     const clientId = '597673576446-t8vtu1oo6bge8i7on5a502m59ugvrs7b.apps.googleusercontent.com'; // 클라이언트 id 기입
-    const redirectUri = 'http://localhost:3000/google/callback';
+    const redirectUri = `${api}/oauth/login/google`;
     
     const handleGoogleLogin = () => {
         const googleAuthUrl = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=token&scope=email%20profile&include_granted_scopes=true&state=state_parameter_passthrough_value`;
         window.location.href = googleAuthUrl; // Google 로그인 페이지로 리다이렉트
-    };
+    };// 구글 로그인
+        
 
     // 카카오톡 로그인
     useEffect(() => {

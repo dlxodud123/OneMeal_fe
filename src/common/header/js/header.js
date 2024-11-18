@@ -4,7 +4,7 @@ import { IoSearch } from "react-icons/io5";
 import { useNavigate } from 'react-router-dom';
 import { MyContext } from '../../../App';
 
-const Header = () => {
+const Header = ({ select }) => {
     const {api} = useContext(MyContext)
     const navigate = useNavigate();
 
@@ -20,10 +20,10 @@ const Header = () => {
                 <div className='header_content'>
                     <div className='header_menu_content'>
                         <div className='header_menu_recipe_content'>
-                            <label onClick={() => navigate('/recipe')} className='header_menu_recipe'>레시피</label>
+                            <label style={{color : select === 'recipe' ? "#003366" : "rgba(0,0,0,0.5)"}} onClick={() => navigate('/recipe')} className='header_menu_recipe'>레시피</label>
                         </div>
                         <div className='header_menu_ranking_content'>
-                            <label onClick={() => navigate('/ranking')} className='header_menu_ranking'>랭킹</label>
+                            <label style={{color : select === 'ranking' ? "#003366" : "rgba(0,0,0,0.5)"}} onClick={() => navigate('/ranking')} className='header_menu_ranking'>랭킹</label>
                         </div>
                     </div>
                     <div className='header_logo_content'>
