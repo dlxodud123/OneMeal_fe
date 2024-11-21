@@ -16,6 +16,7 @@
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     gap: 10px;
+    height: 1000px;
 }
 .recipe_info_info_content{
     width: 208px;
@@ -34,3 +35,41 @@
 }
 
 /* pagination */
+.recipe_info_pagination_container{
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+.recipe_info_pagination_content{
+    height: 50px;
+    display: flex;
+    justify-content: center;
+}
+.recipe_info_pagination_arrow_content{
+    width: 22px;
+    height: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.recipe_info_pagination_arrow{
+    color: rgba(0,0,0,0.2);
+    font-size: 18px;
+}
+.recipe_info_pagination_num_content{
+    display: flex;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.recipe_info_pagination_num{
+    width: 22px;
+    height: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 500;
+    font-family: "Noto Sans KR", sans-serif;
+    cursor: pointer;
+}
