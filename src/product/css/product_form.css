@@ -1,0 +1,15 @@
+.product_form_title_content{
+    width: 1080px;
+    margin: 30px auto 20px auto;
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    color: #888888;
+    display: flex;
+    align-items: center;
+}
+.product_form_content{
+    width: 1080px;
+    margin: auto;
+    display: flex;
+}

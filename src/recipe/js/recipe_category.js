@@ -1,12 +1,14 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './../css/recipe_category.css';
 import { IoIosArrowUp } from "react-icons/io";
 import { IoIosArrowDown } from "react-icons/io";
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Recipe_category = ({ recipeCategory, setRecipeCategory }) => {
+    const navigate = useNavigate();
 
     let [categorySwitch, setCategorySwitch] = useState(true);
-
+    
     const recipeCategoryInfo = [
         { offImg: `https://2bob.co.kr/skin/nodskin_argio/images/tag_icon_1_off.jpg`, onImg: `https://2bob.co.kr/skin/nodskin_argio/images/tag_icon_1_on.jpg`, name: "밥요리" },
         { offImg: `https://2bob.co.kr/skin/nodskin_argio/images/tag_icon_2_off.jpg`, onImg: `https://2bob.co.kr/skin/nodskin_argio/images/tag_icon_2_on.jpg`, name: "국&탕" },
@@ -35,11 +37,20 @@ const Recipe_category = ({ recipeCategory, setRecipeCategory }) => {
         { offImg: `https://2bob.co.kr/skin/nodskin_argio/images/tag_icon_25_off.jpg`, onImg: `https://2bob.co.kr/skin/nodskin_argio/images/tag_icon_25_on.jpg`, name: "기타요리" }
     ];
     
+    // 페이지가 처음 렌더링될 때 또는 URL 변경 시 상태 업데이트
+    const location = useLocation(); 
+    useEffect(() => {
+        const categoryFromUrl = location.pathname.split('/')[2];
+        if (categoryFromUrl) {
+            setRecipeCategory(decodeURIComponent(categoryFromUrl));
+        }
+    }, [location, setRecipeCategory]);
+
     return(
         <div className='recipe_category_container'>
             <div className='recipe_category_content' style={{height: categorySwitch ? '300px' : '0'}}>
                 {recipeCategoryInfo.map((info, index) => (
-                    <div style={{border : recipeCategory === info.name ? "0.1px solid #fc7405" : "0.1px solid rgba(0,0,0,0.1)"}} onClick={() => {setRecipeCategory(info.name)}} key={index} className='recipe_category'>
+                    <div style={{border : recipeCategory === info.name ? "0.1px solid #fc7405" : "0.1px solid rgba(0,0,0,0.1)"}} onClick={() => {setRecipeCategory(info.name); navigate(`/recipe/${encodeURIComponent(info.name)}`);}} key={index} className='recipe_category'>
                         <img 
                             src={recipeCategory === info.name ? info.onImg : info.offImg}
                             alt={info.name}

@@ -1,9 +1,11 @@
 import './../css/main_category.css';
 import { useContext, useState } from 'react';
 import { MyContext } from '../../App';
+import { useNavigate } from 'react-router-dom';
 
 const Main_category = () => {
     const {api} = useContext(MyContext);
+    const navigate = useNavigate();
 
     let [categoryHover, setCategoryHover] = useState(null);
     let [startIndex, setStartIndex] = useState(0);
@@ -72,18 +74,12 @@ const Main_category = () => {
             </div>
 
             <div className='main_category_info_wrapper'>
-                <div
-                    className='main_category_info_content'
-                    style={{
-                        transform: `translateX(-${startIndex * 90}px)`, // 90px씩 이동
-                        transition: 'transform 0.5s ease',
-                        display: 'flex'
-                    }}
-                >
+                <div className='main_category_info_content' style={{transform: `translateX(-${startIndex * 90}px)`, transition: 'transform 0.5s ease', display: 'flex'}}>
                     {categoryInfo.map((info, index) => (
                         <div key={index} className='main_category_img_content'
                              onMouseEnter={() => setCategoryHover(index)}
-                             onMouseLeave={() => setCategoryHover(null)} >
+                             onMouseLeave={() => setCategoryHover(null)} 
+                             onClick={() => {navigate(`/recipe/${encodeURIComponent(info.name)}`)}}>
                             <img
                                 className='main_category_img'
                                 src={index === categoryHover ? info.onImg : info.offImg}

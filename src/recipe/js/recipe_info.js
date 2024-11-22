@@ -4,9 +4,11 @@ import { MyContext } from '../../App';
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const Recipe_info = ({recipeCategory}) => {
     const {api} = useContext(MyContext);
+    const navigate = useNavigate();
     
     // let [recipeInfo, setRecipeInfo] = useState();    
 
@@ -18,14 +20,14 @@ const Recipe_info = ({recipeCategory}) => {
             { img: `${process.env.PUBLIC_URL}/img/recent/recent-img4.jpg`, name: "김치찌개", bookmark: true },
             { img: `${process.env.PUBLIC_URL}/img/recent/recent-img5.jpg`, name: "된장찌개", bookmark: false },
         ]).flat()
-    ];
+    ].map((item, index) => ({ ...item, id: index + 1 }));
        
     let [recipePaginationSelect, setRecipePaginationSelect] = useState(1);
     let [recipePaginationLength, setRecipePaginationLength] = useState(1);
     let [paginationRange, setPaginationRange] = useState([1, 5]); // 5개씩 표시 범위
 
+    // 페이지 수 계산 (20개씩 나누기)
     useEffect(() => {
-        // 페이지 수 계산 (20개씩 나누기)
         const pages = Math.ceil(recipeInfoTest.length / 20);
         setRecipePaginationLength(pages);
     }, [recipeInfoTest]);
@@ -54,7 +56,7 @@ const Recipe_info = ({recipeCategory}) => {
             try {
                 const response = await axios.get(`${api}/recipe/${recipeCategory}`, {
                     headers: {
-                        'Content-Type': 'application/json', // 텍스트 형식으로 응답 받기
+                        'Content-Type': 'application/json',
                     }
                 });
                 if (response.status === 200) {
@@ -76,7 +78,7 @@ const Recipe_info = ({recipeCategory}) => {
             </div>
             <div className='recipe_info_content'>
                 {currentPageData.map((info, index) => (
-                    <div className='recipe_info_info_content' key={index}>
+                    <div onClick={() => {navigate(`/product/${info.id}`)}} className='recipe_info_info_content' key={index}>
                         <img className='recipe_info_info_img' src={info.img} alt={info.name}></img>
                         <div className='recipe_info_info_text'>
                             {info.name}
@@ -94,30 +96,12 @@ const Recipe_info = ({recipeCategory}) => {
                             { length: recipePaginationLength },
                             (_, index) => index + 1
                         )
-                            .filter(
-                                (page) =>
-                                    page >= paginationRange[0] &&
-                                    page <= paginationRange[1]
-                            )
-                            .map((page) => (
-                                <div
-                                    key={page}
-                                    onClick={() => handlePageChange(page)}
-                                    style={{
-                                        border:
-                                            recipePaginationSelect === page
-                                                ? "1px solid rgba(0,0,0,0.1)"
-                                                : "none",
-                                        color:
-                                            recipePaginationSelect === page
-                                                ? "#003366"
-                                                : "rgba(0,0,0,0.3)",
-                                    }}
-                                    className="recipe_info_pagination_num"
-                                >
-                                    {page}
-                                </div>
-                            ))}
+                        .filter((page) => page >= paginationRange[0] && page <= paginationRange[1])
+                        .map((page) => (
+                            <div key={page} onClick={() => handlePageChange(page)} style={{border: recipePaginationSelect === page ? "1px solid rgba(0,0,0,0.1)" : "none", color: recipePaginationSelect === page ? "#003366" : "rgba(0,0,0,0.3)"}} className="recipe_info_pagination_num">
+                                {page}
+                            </div>
+                    ))}
                     </div>
                     <div className='recipe_info_pagination_arrow_content'>
                         <IoIosArrowForward onClick={() => handlePageChange(recipePaginationSelect < recipePaginationLength ? recipePaginationSelect + 1 : recipePaginationSelect)} className='recipe_info_pagination_arrow'></IoIosArrowForward>

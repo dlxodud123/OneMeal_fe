@@ -20,6 +20,7 @@
 }
 .recipe_info_info_content{
     width: 208px;
+    cursor: pointer;
 }
 .recipe_info_info_img{
     width: 208px;

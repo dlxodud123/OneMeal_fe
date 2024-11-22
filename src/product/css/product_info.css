@@ -1,0 +1,99 @@
+.product_info_container{
+    width: 530px;
+    height: 600px;
+}
+
+/* 찜 & 조회수 */
+.product_info_popularity_container{
+    border-bottom: 2px solid rgba(0,0,0,0.05);
+    font-size: 13px;
+    font-family: "Noto Sans KR", sans-serif;
+    color: #888;
+    padding-top: 5px;
+    padding-bottom: 17px;
+}
+.product_info_popularity_content{
+    display: flex;
+    align-items: center;
+}
+
+/* 이름 */
+.product_info_name_content{
+    font-size: 30px;
+    font-weight: 500;
+    font-family: "Noto Sans KR", sans-serif;
+    margin-top: 30px;
+}
+
+/* 이름(서브) */
+.product_info_name_serve_container{
+    margin-top: 7px;
+    height: 145px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+.product_info_name_serve1_content{
+    height: 70px;
+    font-size: 16px;
+    color: #888888;
+    font-family: "Noto Sans KR", sans-serif;
+}
+.product_info_name_serve2_content{
+    width: 150px;
+    height: 75px;
+    font-size: 12px;
+    color: #888888;
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+/* 재료 & 양념 */
+.product_info_material_seasoning_content{
+    font-family: "Noto Sans KR", sans-serif;
+    margin-top: 37px;
+}
+.product_info_material_seasoning_title{
+    font-size: 25px;
+    font-weight: 500;
+    width: 55px;
+}
+.product_info_material_seasoning_people_icon{
+    font-size: 16px;
+    color: #003366;
+    stroke-width: 0.5;
+    margin-bottom: 5px;
+}
+.product_info_material_seasoning_people{
+    font-size: 12px;
+    font-weight: 500;
+    color: #003366;
+    margin-left: 2px;
+}
+
+/* 재료 */
+.product_info_material_content{
+    font-family: "Noto Sans KR", sans-serif;
+    margin-top: 20px;
+}
+.product_info_material_title{
+    color: #5e5e5e;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+.product_info_material{
+    font-size: 12px;
+    color: #888;
+}
+
+/* 양념 */
+.product_info_seasoning_content{
+    font-family: "Noto Sans KR", sans-serif;
+    margin-top: 20px;
+}
+.product_info_seasoning_title{
+    color: #5e5e5e;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+.product_info_seasoning{
+    font-size: 12px;
+    color: #888;
+}
