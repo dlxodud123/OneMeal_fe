@@ -12,4 +12,13 @@
     width: 1080px;
     margin: auto;
     display: flex;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+.product_form_detail_content{
+    width: 1080px;
+    margin: auto;
+}
+.product_form_comment_content{
+    width: 1080px;
+    margin: auto;
 }

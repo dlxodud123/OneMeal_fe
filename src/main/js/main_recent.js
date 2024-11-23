@@ -1,11 +1,12 @@
 import './../css/main_recent.css';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { MyContext } from '../../App';
+import axios from 'axios';
 
 const Main_recent = () => {
     const {api} = useContext(MyContext);
 
-    const recentInfo = [
+    const recentInfoTest = [
         { img: `${process.env.PUBLIC_URL}/img/recent/recent-img1.jpg`, name: "삼겹살" },
         { img: `${process.env.PUBLIC_URL}/img/recent/recent-img2.jpg`, name: "곱창" },
         { img: `${process.env.PUBLIC_URL}/img/recent/recent-img3.jpg`, name: "회" },
@@ -13,13 +14,36 @@ const Main_recent = () => {
         { img: `${process.env.PUBLIC_URL}/img/recent/recent-img5.jpg`, name: "된장찌개" }
     ];
 
+    // let [recentInfo, setRecentInfo] = useState();
+
+    useEffect(() => {
+        const axiosRecentInfo = async () => {
+            console.log("axios 실행");
+            try {
+                const response = await axios.get(`${api}/recent`, {
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
+                });
+                if (response.status === 200) {
+                    console.log("status Code : ", response.status);
+                    console.log("Status Text:", response.data);
+                    // setRecentInfo(response.data);
+                }     
+            } catch (err) {
+                console.error("Error fetching data:", err);
+            }
+        };
+        axiosRecentInfo();
+    }, [])
+
     return(
         <div className='main_recent_container'>
             <div className='main_recent_title_content'>
                 <label className='main_recent_title'>최신 레시피</label>
             </div>
             <div className='main_recent_img_content'>
-                {recentInfo.map((info, index) => (
+                {recentInfoTest.map((info, index) => (
                     <div>
                         <img
                             key={index}

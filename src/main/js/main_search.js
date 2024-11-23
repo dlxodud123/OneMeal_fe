@@ -1,16 +1,17 @@
 import './../css/main_search.css';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { MyContext } from '../../App';
 import { FaRegHeart } from "react-icons/fa";
 import { FiPlusCircle } from "react-icons/fi";
 import { FiMinusCircle } from "react-icons/fi";
+import axios from 'axios';
 
 const Main_search = () => {
     const {api} = useContext(MyContext);
 
     let [moreBtn, setMoreBtn] = useState(false);
 
-    const searchInfo = [
+    const searchInfoTest = [
         { img: `${process.env.PUBLIC_URL}/img/recent/recent-img1.jpg`, name: "삼겹살", bookmark: true },
         { img: `${process.env.PUBLIC_URL}/img/recent/recent-img2.jpg`, name: "곱창", bookmark: false },
         { img: `${process.env.PUBLIC_URL}/img/recent/recent-img3.jpg`, name: "회", bookmark: false },
@@ -33,8 +34,31 @@ const Main_search = () => {
         { img: `${process.env.PUBLIC_URL}/img/recent/recent-img5.jpg`, name: "된장찌개", bookmark: false }
     ];
     
+    const displayedInfo = moreBtn ? searchInfoTest : searchInfoTest.slice(0, 6);
+
+    // let [searchInfo, setSearchInfo] = useState();
+
+    useEffect(() => {
+        const axiosSearchInfo = async () => {
+            console.log("axios 실행");
+            try {
+                const response = await axios.get(`${api}/search`, {
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
+                });
+                if (response.status === 200) {
+                    console.log("status Code : ", response.status);
+                    console.log("Status Text:", response.data);
+                    // setSearchInfo(response.data);
+                }     
+            } catch (err) {
+                console.error("Error fetching data:", err);
+            }
+        };
+        axiosSearchInfo();
+    }, [])
     
-    const displayedInfo = moreBtn ? searchInfo : searchInfo.slice(0, 6);
     
     return(
         <div className='main_search_container'>

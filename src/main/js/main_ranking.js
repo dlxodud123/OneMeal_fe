@@ -1,13 +1,14 @@
 import './../css/main_ranking.css';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { MyContext } from '../../App';
 import { FaRegHeart } from "react-icons/fa";
 import { FaRegCommentDots } from "react-icons/fa";
+import axios from 'axios';
 
 const Main_ranking = () => {
     const {api} = useContext(MyContext);
 
-    const bookmarkInfo = [
+    const bookmarkInfoTest = [
         { img: `${process.env.PUBLIC_URL}/img/recent/recent-img1.jpg`, name: "삼겹살", count: 9487 },
         { img: `${process.env.PUBLIC_URL}/img/recent/recent-img2.jpg`, name: "곱창", count: 9112 },
         { img: `${process.env.PUBLIC_URL}/img/recent/recent-img3.jpg`, name: "회", count: 7023 },
@@ -15,13 +16,57 @@ const Main_ranking = () => {
         { img: `${process.env.PUBLIC_URL}/img/recent/recent-img5.jpg`, name: "된장찌개", count: 4701 }
     ];
     
-    const commentInfo = [
+    const commentInfoTest = [
         { img: `${process.env.PUBLIC_URL}/img/recent/recent-img5.jpg`, name: "된장찌개", count: 25671 },
         { img: `${process.env.PUBLIC_URL}/img/recent/recent-img4.jpg`, name: "김치찌개", count: 16142 },
         { img: `${process.env.PUBLIC_URL}/img/recent/recent-img3.jpg`, name: "회", count: 15988 },
         { img: `${process.env.PUBLIC_URL}/img/recent/recent-img2.jpg`, name: "곱창", count: 15532 },
         { img: `${process.env.PUBLIC_URL}/img/recent/recent-img1.jpg`, name: "삼겹살", count: 14889 }
     ];
+
+    // let [bookmarkInfo, setBookmarkInfo] = useState();
+    // let [commentInfo, setCommentInfo] = useState();
+
+    useEffect(() => {
+        const axiosBookmarkInfo = async () => {
+            console.log("axios 실행");
+            try {
+                const response = await axios.get(`${api}/bookmark`, {
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
+                });
+                if (response.status === 200) {
+                    console.log("status Code : ", response.status);
+                    console.log("Status Text:", response.data);
+                    // setBookmarkInfo(response.data);
+                }     
+            } catch (err) {
+                console.error("Error fetching data:", err);
+            }
+        };
+        axiosBookmarkInfo();
+    }, [])
+    useEffect(() => {
+        const axiosCommentInfo = async () => {
+            console.log("axios 실행");
+            try {
+                const response = await axios.get(`${api}/bookmark`, {
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
+                });
+                if (response.status === 200) {
+                    console.log("status Code : ", response.status);
+                    console.log("Status Text:", response.data);
+                    // setCommentInfo(response.data);
+                }     
+            } catch (err) {
+                console.error("Error fetching data:", err);
+            }
+        };
+        axiosCommentInfo();
+    }, [])
 
     return(
         <div className='main_ranking_container'>
@@ -33,7 +78,7 @@ const Main_ranking = () => {
                     </label>
                 </div>
 
-                {bookmarkInfo.map((info, index) => (
+                {bookmarkInfoTest.map((info, index) => (
                     <div className='main_ranking_bookmark_info_content'>
                         <div className='main_ranking_bookmark_img_num_content'>
                             <label className='main_ranking_bookmark_img_num'>
@@ -71,7 +116,7 @@ const Main_ranking = () => {
                     </label>
                 </div>
 
-                {commentInfo.map((info, index) => (
+                {commentInfoTest.map((info, index) => (
                     <div className='main_ranking_comment_info_content'>
                         <div className='main_ranking_comment_img_num_content'>
                             <label className='main_ranking_comment_img_num'>

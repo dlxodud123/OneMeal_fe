@@ -1,0 +1,94 @@
+.product_comment_container{
+    margin-top: 50px;
+}
+.product_comment_title_content{
+    font-size: 22px;
+    font-family: "Noto Sans KR", sans-serif;
+    margin-bottom: 10px;
+}
+.product_comment_input_content{
+    height: 100px;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.product_comment_input{
+    width: 880px;
+    height: 40px;
+    border: 1px solid #ececec;
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 13px;
+    color: #888;
+    outline: none;
+    padding: 0px 0px 0px 15px;
+}
+.product_comment_btn{
+    width: 120px;
+    height: 40px;
+    background-color: #003366;
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+}
+.product_comment_content{
+    height: 120px;
+    display: flex;
+    border-top: 0.5px solid rgba(0,0,0,0.1);
+}
+.product_comment_icon_container{
+    width: 100px;
+    display: flex;
+    align-items: center;
+}
+.product_comment_icon_content{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: "cover";
+    background-color: rgba(0,0,0,0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.product_comment_icon{
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(0,0,0,0.2);
+}
+.product_comment_content_content{
+    width: 980px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.product_comment_name{
+    height: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #c1c1c1;
+    font-family: "Noto Sans KR", sans-serif;
+}
+.product_comment{
+    height: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #888;;
+    font-family: "Noto Sans KR", sans-serif;
+}
+.product_comment_more_btn_content{
+    
+}
+.product_comment_more_btn{
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    font-family: "Noto Sans KR", sans-serif;
+}
