@@ -3,12 +3,17 @@ import Header from '../../common/header/js/header';
 import Footer from '../../common/footer/js/footer';
 import { MyContext } from '../../App';
 import { useContext, useEffect, useRef, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const Signup_form = () => {
     const {api} = useContext(MyContext);
     const navigate = useNavigate();
+
+    const location = useLocation(); 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [location]);
 
     // 생년월일 반복문
     const years = [];

@@ -4,9 +4,11 @@ import { MyContext } from '../../App';
 import axios from 'axios';
 import { IoPersonSharp } from "react-icons/io5";
 import { IoPersonCircleOutline } from "react-icons/io5";
+import { useNavigate } from 'react-router-dom';
 
 const Product_comment = ({ id }) => {
     const {api} = useContext(MyContext);
+    const navigate = useNavigate();
 
     // let [commentInfo, setCommentInfo] = useState();
 
@@ -58,14 +60,42 @@ const Product_comment = ({ id }) => {
         axiosProductInfo();
     }, [])
 
+    let [commentValue, setCommentValue] = useState('');
+
+    const commentBtn = async () => {
+        if (commentValue === '') { alert("댓글을 작성해주세요."); return; }
+        console.log("axios 실행");
+        console.log("댓글 : ", commentValue);
+        setCommentValue('');
+        alert("댓글이 등록되었습니다.");
+        navigate(`/product/${id}`);
+        try {
+            const response = await axios.get(`${api}/comment/input/${id}`, {
+                params: {
+                    comment: commentValue,
+                },
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            });
+            if (response.status === 200) {
+                console.log("status Code : ", response.status);
+                console.log("Status Text:", response.data);
+                // setCommentInfo(response.data);
+            }       
+        } catch (err) {
+            console.error("Error fetching data:", err);
+        }
+    }
+
     return(
         <div className='product_comment_container'>
             <div className='product_comment_title_content'>
                 한줄댓글
             </div>
             <div className='product_comment_input_content'>
-                <input className='product_comment_input' maxLength={40}></input>
-                <div className='product_comment_btn'>
+                <input value={commentValue} onChange={(e) => setCommentValue(e.target.value)} className='product_comment_input' maxLength={40}></input>
+                <div onClick={() => {commentBtn()}} className='product_comment_btn'>
                     댓글남기기
                 </div>
             </div>
@@ -86,13 +116,16 @@ const Product_comment = ({ id }) => {
                     </div>
                 </div>
             ))}
-            {commentsToShow < allComments.length && (
+            {commentsToShow < allComments.length ? 
                 <div className='product_comment_more_btn_content'>
                     <div className='product_comment_more_btn' onClick={loadMoreComments}>
                         더보기
                     </div>
                 </div>
-            )}
+            : 
+                <div className='product_comment_more_btn_content'>
+                </div>
+            }
         </div>
     )
 }

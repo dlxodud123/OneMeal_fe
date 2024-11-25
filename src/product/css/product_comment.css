@@ -35,6 +35,7 @@
     justify-content: center;
     align-items: center;
     margin-left: 10px;
+    cursor: pointer;
 }
 .product_comment_content{
     height: 120px;
@@ -85,10 +86,21 @@
     font-family: "Noto Sans KR", sans-serif;
 }
 .product_comment_more_btn_content{
-    
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 .product_comment_more_btn{
-    background-color: rgba(0,0,0,0.5);
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #003366;
     color: white;
     font-family: "Noto Sans KR", sans-serif;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }

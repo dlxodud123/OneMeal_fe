@@ -1,7 +1,7 @@
 import './../css/product_form.css';
 import { useContext, useEffect, useState } from 'react';
 import { MyContext } from '../../App';
-import { useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import { IoIosArrowForward } from "react-icons/io";
 import axios from 'axios';
 import Header from '../../common/header/js/header';
@@ -14,6 +14,11 @@ import Footer from '../../common/footer/js/footer';
 const Product_form = () => {
     const {api} = useContext(MyContext);
     const {id} = useParams();
+
+    const location = useLocation(); 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [location]);
 
     // let [productInfo, setProductInfo] = useState();
     
