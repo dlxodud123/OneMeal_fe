@@ -12,6 +12,8 @@ import Naver_callback from './callback/naver/naver_callback';
 import Signup_form from './signup/js/signup_form';
 import Recipe_form from './recipe/js/recipe_form';
 import Product_form from './product/js/product_form';
+import Ingredient_form from './ingredient/js/ingredient_form';
+import Ingredient_result_form from './ingredient_result/js/ingredient_result_form';
 
 import Test from './test/test';
 
@@ -43,6 +45,8 @@ function App() {
           <Route path='/signup' element={<Signup_form></Signup_form>}></Route>
           <Route path='/recipe/:category' element={<Recipe_form></Recipe_form>}></Route>
           <Route path='/product/:id' element={<Product_form></Product_form>}></Route>
+          <Route path='/ingredient' element={<Ingredient_form></Ingredient_form>}></Route>
+          <Route path='/ingredient/result' element={<Ingredient_result_form></Ingredient_result_form>}></Route>
 
           <Route path='/test' element={<Test></Test>}></Route>
         </Routes>

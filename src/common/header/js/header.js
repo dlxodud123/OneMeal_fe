@@ -22,8 +22,8 @@ const Header = ({ select }) => {
                         <div className='header_menu_recipe_content'>
                             <label style={{color : select === 'recipe' ? "#003366" : "rgba(0,0,0,0.5)"}} onClick={() => navigate(`/recipe/${encodeURIComponent("밥요리")}`)} className='header_menu_recipe'>레시피</label>
                         </div>
-                        <div className='header_menu_ranking_content'>
-                            <label style={{color : select === 'ranking' ? "#003366" : "rgba(0,0,0,0.5)"}} onClick={() => navigate('/ranking')} className='header_menu_ranking'>랭킹</label>
+                        <div className='header_menu_ingredient_content'>
+                            <label style={{color : select === 'ingredient' ? "#003366" : "rgba(0,0,0,0.5)"}} onClick={() => navigate('/ingredient')} className='header_menu_ingredient'>재료활용</label>
                         </div>
                     </div>
                     <div className='header_logo_content'>

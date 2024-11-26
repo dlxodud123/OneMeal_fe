@@ -25,18 +25,18 @@
 }
 .header_menu_recipe{
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 600;
     font-family: "Noto Sans KR", sans-serif;
     cursor: pointer;
 }
-.header_menu_ranking_content{
+.header_menu_ingredient_content{
     width: 120px;
     display: flex;
     align-items: center;
 }
-.header_menu_ranking{
+.header_menu_ingredient{
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 600;
     font-family: "Noto Sans KR", sans-serif;
     cursor: pointer;
 }

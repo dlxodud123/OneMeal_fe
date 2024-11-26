@@ -1,0 +1,61 @@
+.ingredient_result_form_contianer{
+    width: 1080px;
+    margin: auto;
+}
+.ingredient_result_form_title_content{
+    width: 1000px;
+    font-family: "Noto Sans KR", sans-serif;
+    margin: 40px auto auto auto;
+}
+.ingredient_result_form_title{
+    font-size: 25px;
+    color: rgba(0,0,0,0.5);
+}   
+.ingredient_result_form_title2{
+    font-size: 35px;
+    color: #003366;
+    font-weight: 500;
+}
+.ingredient_result_form_ingredient_list_container{
+    width: 1000px;
+    margin: 30px auto auto auto;
+    /* margin-left: 40px;
+    margin-top: 30px; */
+    display: flex;
+    flex-wrap: wrap;
+}
+.ingredient_result_form_ingredient_list_content{
+    height: 60px;
+    font-size: 20px;
+    font-family: "Noto Sans KR", sans-serif;
+    color: white;
+    background-color: black;  
+    padding-left: 28px;
+    padding-right: 28px; 
+    margin-bottom: 15px; 
+    display: flex;
+    align-items: center;
+    border-radius: 30px;
+}
+.ingredient_result_form_ingredient_list_gap{
+    width: 15px;
+}
+.ingredient_result_form_ingredient_list_bottom{
+    width: 1000px;
+    height: 20px;
+    margin: auto;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+.ingredient_result_form_except_ingredient_title_content{
+    width: 1000px;
+    margin: 40px auto auto auto;
+    font-family: "Noto Sans KR", sans-serif;
+}
+.ingredient_result_form_except_ingredient_title{
+    font-size: 22px;
+    font-weight: bold;
+}
+.ingredient_result_form_except_ingredient_title2{
+    font-size: 18px;
+    color: rgba(0,0,0,0.5);
+}

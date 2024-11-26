@@ -1,0 +1,82 @@
+.ingredient_form_content{
+    width: 1080px;
+    height: 800px;
+    margin: auto;
+}
+.ingredient_form_title_content{
+    font-size: 35px;
+    margin-top: 40px;
+    margin-left: 40px;
+    margin-bottom: 40px;
+    font-family: "Noto Sans KR", sans-serif;
+}
+.ingredient_form_input_content{
+    margin-left: 40px;
+}
+.ingredient_form_input_title{
+    font-size: 23px;
+    color: rgba(0,0,0,0.4);
+    font-family: "Noto Sans KR", sans-serif;
+    margin-left: 10px;
+}
+.ingredient_form_input{
+    width: 1000px;
+    height: 90px;
+    border-radius: 45px;
+    border: 3.5px solid #003366;
+    padding: 0px 0px 0px 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 30px;
+    font-family: "Noto Sans KR", sans-serif;
+    outline: none;
+}
+.ingredient_form_input::placeholder{
+    color: rgba(0,0,0,0.3);
+}
+.ingredient_form_input_serve_title{
+    font-size: 20px;
+    color: rgba(0,0,0,0.3);
+    font-family: "Noto Sans KR", sans-serif;
+    margin-left: 10px;
+}
+.ingredient_form_except_input_content{
+    margin-top: 70px;
+    margin-left: 40px;
+}
+.ingredient_form_except_input_title{
+    font-size: 23px;
+    color: rgba(0,0,0,0.4);
+    font-family: "Noto Sans KR", sans-serif;
+    margin-left: 10px;
+}
+.ingredient_form_except_input{
+    width: 1000px;
+    height: 90px;
+    border-radius: 45px;
+    border: 3.5px solid rgba(0,0,0,0.2);
+    padding: 0px 0px 0px 40px;
+    margin-top: 10px;
+    font-size: 30px;
+    font-family: "Noto Sans KR", sans-serif;
+    outline: none;
+}
+.ingredient_form_except_input::placeholder{
+    color: rgba(0,0,0,0.3);
+}
+.ingredient_form_search_btn_content{
+    width: 1000px;
+    height: 80px;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: "Noto Sans KR", sans-serif;
+    margin-top: 110px;
+    margin-left: 40px;
+    border-radius: 15px;
+    cursor: pointer;
+}
