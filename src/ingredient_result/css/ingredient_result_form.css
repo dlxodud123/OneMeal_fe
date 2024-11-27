@@ -3,35 +3,35 @@
     margin: auto;
 }
 .ingredient_result_form_title_content{
-    width: 1000px;
+    width: 750px;
     font-family: "Noto Sans KR", sans-serif;
     margin: 40px auto auto auto;
 }
 .ingredient_result_form_title{
-    font-size: 25px;
+    font-size: 20px;
     color: rgba(0,0,0,0.5);
 }   
 .ingredient_result_form_title2{
-    font-size: 35px;
+    font-size: 28px;
     color: #003366;
     font-weight: 500;
 }
+
+/* 재료 */
 .ingredient_result_form_ingredient_list_container{
-    width: 1000px;
+    width: 750px;
     margin: 30px auto auto auto;
-    /* margin-left: 40px;
-    margin-top: 30px; */
     display: flex;
     flex-wrap: wrap;
 }
 .ingredient_result_form_ingredient_list_content{
-    height: 60px;
-    font-size: 20px;
+    height: 40px;
+    font-size: 16px;
     font-family: "Noto Sans KR", sans-serif;
     color: white;
     background-color: black;  
-    padding-left: 28px;
-    padding-right: 28px; 
+    padding-left: 20px;
+    padding-right: 20px; 
     margin-bottom: 15px; 
     display: flex;
     align-items: center;
@@ -40,22 +40,85 @@
 .ingredient_result_form_ingredient_list_gap{
     width: 15px;
 }
+/* 재료(0) */
+.ingredient_result_form_ingredient_list_none_container{
+    height: 30px;
+}
+
+
 .ingredient_result_form_ingredient_list_bottom{
-    width: 1000px;
+    width: 750px;
     height: 20px;
     margin: auto;
     border-bottom: 1px solid rgba(0,0,0,0.1);
 }
+
+
+/* 제외 */
 .ingredient_result_form_except_ingredient_title_content{
-    width: 1000px;
-    margin: 40px auto auto auto;
+    width: 750px;
+    margin: 20px auto 20px auto;
     font-family: "Noto Sans KR", sans-serif;
 }
 .ingredient_result_form_except_ingredient_title{
-    font-size: 22px;
+    font-size: 18px;
     font-weight: bold;
 }
 .ingredient_result_form_except_ingredient_title2{
-    font-size: 18px;
+    font-size: 16px;
     color: rgba(0,0,0,0.5);
+}
+/* 제외(0) */
+.ingredient_result_form_except_ingredient_title_none_content{
+    height: 30px;
+}
+
+
+/* 정보 */
+.ingredient_result_form_info_container{
+    width: 750px;
+    margin: auto;
+}
+.ingredient_result_form_info_content{
+    margin-bottom: 20px;
+    display: flex;
+}
+.ingredient_result_form_info_img{
+    width: 160px;
+    height: 120px;
+    border-radius: 15px;
+}
+.ingredient_result_form_info_name_content{
+    font-size: 20px;
+    font-family: "Noto Sans KR", sans-serif;
+    font-weight: 500;
+    margin :10px 0px 0px 30px;
+}
+.ingredient_result_form_info_favorite_content{
+    font-size: 15px;
+    font-family: "Noto Sans KR", sans-serif;
+    color: #888;
+    margin :3px 0px 0px 30px;
+}
+.ingredient_result_form_info_gap{
+    margin-right: 5px;
+}
+.ingredient_result_form_info_hits_content{
+    font-size: 15px;
+    font-family: "Noto Sans KR", sans-serif;
+    color: #888;
+    margin :3px 0px 0px 30px;
+}
+
+/* 정보(0) */
+.ingredient_result_form_info_none_content{
+    width: 750px;
+    height: 400px;
+    font-size: 18px;
+    color: rgba(0,0,0,0.35);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Noto Sans KR", sans-serif;
+    text-align: center;
 }

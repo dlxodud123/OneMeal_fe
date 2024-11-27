@@ -16,7 +16,7 @@ const Ingredient_result_form = () => {
     // let [ingredientResultInfo, setIngredientResultInfo] = useState();
 
     const ingredientResultInfoTest = [
-        ...Array.from({ length: 25 }, () => [
+        ...Array.from({ length: 5 }, () => [
             { img: `${process.env.PUBLIC_URL}/img/recent/recent-img1.jpg`, name: "삼겹살", bookmark: true },
             { img: `${process.env.PUBLIC_URL}/img/recent/recent-img2.jpg`, name: "곱창", bookmark: false },
             { img: `${process.env.PUBLIC_URL}/img/recent/recent-img3.jpg`, name: "회", bookmark: false },
@@ -57,38 +57,61 @@ const Ingredient_result_form = () => {
                     <label className='ingredient_result_form_title'>식재료 한방에 구원하는</label><br></br>
                     <label className='ingredient_result_form_title2'>재료 활용</label>
                 </div>
-                <div className='ingredient_result_form_ingredient_list_container'>
-                    {ingredientList.map((item, index) => (
-                        <div style={{display:"flex"}}>
-                            <div className='ingredient_result_form_ingredient_list_content'>
-                                {item}
+                {ingredientList.length === 0 ? 
+                    <div className='ingredient_result_form_ingredient_list_none_container'></div>
+                    :
+                    <div className='ingredient_result_form_ingredient_list_container'>
+                        {ingredientList.map((item, index) => (
+                            <div style={{display:"flex"}}>
+                                <div className='ingredient_result_form_ingredient_list_content'>
+                                    {item}
+                                </div>
+                                {!(index === ingredientList.length - 1) && (
+                                    <div className='ingredient_result_form_ingredient_list_gap'></div>  
+                                )}
                             </div>
-                            {!(index === ingredientList.length - 1) && (
-                                <div className='ingredient_result_form_ingredient_list_gap'></div>  
-                            )}
-                        </div>
-                    ))}
-                </div>
+                        ))}
+                    </div>
+                }
                 <div className='ingredient_result_form_ingredient_list_bottom'></div>
-                <div className='ingredient_result_form_except_ingredient_title_content'>
-                    {exceptIngredientList.length === 0 &&
-                        <></>
-                    }
-                    {exceptIngredientList.map((item, index) => (
-                        <>
+                {exceptIngredientList.length === 0 ?
+                    <div className='ingredient_result_form_except_ingredient_title_none_content'></div>
+                    :
+                    <div className='ingredient_result_form_except_ingredient_title_content'>
+                        {exceptIngredientList.map((item, index) => (
                             <label className='ingredient_result_form_except_ingredient_title'>{item}{index !== exceptIngredientList.length - 1 && ", "}</label>
-                        </>
-                    ))}
-                    {!(exceptIngredientList.length === 0) &&
+                        ))}
                         <label className='ingredient_result_form_except_ingredient_title2'>을(를) 제외한 레시피입니다.</label>
+                    </div>
+                        
+                }
+                <div className='ingredient_result_form_info_container'>
+                    {ingredientResultInfoTest.length === 0 ?
+                        <div className='ingredient_result_form_info_none_content'>
+                            <label>선택된 재료가 포함된<br></br>레시피를 찾을 수 없습니다.</label>
+                        </div>
+                        :
+                        ingredientResultInfoTest.map((item, index) => (
+                            <div className='ingredient_result_form_info_content'>
+                                <img className='ingredient_result_form_info_img' src={item.img}></img>
+                                <div style={{display:"flex", flexDirection:"column", justifyContent:"center"}}>
+                                    <div className='ingredient_result_form_info_name_content'>
+                                        {item.name}
+                                    </div>
+                                    <div className='ingredient_result_form_info_favorite_content'>
+                                        <img className='ingredient_result_form_info_gap' src='https://2bob.co.kr/skin/nodskin_argio/images/rec_icon2.jpg'></img>
+                                        1234        
+                                    </div>
+                                    <div className='ingredient_result_form_info_hits_content'>
+                                        <img className='ingredient_result_form_info_gap' src='https://2bob.co.kr/skin/nodskin_argio/images/rec_icon1.jpg'></img>456789
+                                    </div>
+                                </div>
+                            </div>
+                        ))
                     }
-                </div>
-                <div>
-                    asdf
                 </div>
             </div>
             <Footer></Footer>
-            {/* {JSON.stringify(exceptIngredientList)}  */}
         </div>
     )
 }

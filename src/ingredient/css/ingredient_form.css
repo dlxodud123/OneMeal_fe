@@ -1,33 +1,38 @@
 .ingredient_form_content{
     width: 1080px;
-    height: 800px;
+    height: 600px;
     margin: auto;
 }
 .ingredient_form_title_content{
-    font-size: 35px;
-    margin-top: 40px;
-    margin-left: 40px;
-    margin-bottom: 40px;
+    width: 750px;
+    font-size: 26px;
+    margin: 30px auto auto auto;
     font-family: "Noto Sans KR", sans-serif;
 }
-.ingredient_form_input_content{
-    margin-left: 40px;
+
+/* 재료 */
+.ingredient_form_input_container{
+    margin-top: 40px;
 }
 .ingredient_form_input_title{
-    font-size: 23px;
+    width: 750px;
+    font-size: 18px;
     color: rgba(0,0,0,0.4);
     font-family: "Noto Sans KR", sans-serif;
-    margin-left: 10px;
+    margin: auto auto 5px auto;
+    padding-left: 15px;
+}
+.ingredient_form_input_content{
+    width: 750px;
+    margin: auto;
 }
 .ingredient_form_input{
-    width: 1000px;
-    height: 90px;
-    border-radius: 45px;
-    border: 3.5px solid #003366;
-    padding: 0px 0px 0px 40px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-size: 30px;
+    width: 750px;
+    height: 70px;
+    border-radius: 35px;
+    border: 2.5px solid #003366;
+    padding: 0px 30px 0px 30px;
+    font-size: 22px;
     font-family: "Noto Sans KR", sans-serif;
     outline: none;
 }
@@ -35,48 +40,58 @@
     color: rgba(0,0,0,0.3);
 }
 .ingredient_form_input_serve_title{
-    font-size: 20px;
+    width: 750px;
+    font-size: 14px;
     color: rgba(0,0,0,0.3);
     font-family: "Noto Sans KR", sans-serif;
-    margin-left: 10px;
+    margin: 5px auto auto auto;
+    padding-left: 15px;
 }
-.ingredient_form_except_input_content{
-    margin-top: 70px;
-    margin-left: 40px;
+
+/* 제외 */
+.ingredient_form_except_input_container{
+    margin-top: 50px;
 }
 .ingredient_form_except_input_title{
-    font-size: 23px;
+    width: 750px;
+    font-size: 18px;
     color: rgba(0,0,0,0.4);
     font-family: "Noto Sans KR", sans-serif;
-    margin-left: 10px;
+    margin: auto;
+    padding-left: 15px;
+}
+.ingredient_form_except_input_content{
+    width: 750px;
+    margin: auto;
 }
 .ingredient_form_except_input{
-    width: 1000px;
-    height: 90px;
-    border-radius: 45px;
-    border: 3.5px solid rgba(0,0,0,0.2);
-    padding: 0px 0px 0px 40px;
-    margin-top: 10px;
-    font-size: 30px;
+    width: 750px;
+    height: 70px;
+    border-radius: 35px;
+    border: 2.5px solid rgba(0,0,0,0.2);
+    padding: 0px 30px 0px 30px;
+    margin-top: 5px;
+    font-size: 22px;
     font-family: "Noto Sans KR", sans-serif;
     outline: none;
 }
 .ingredient_form_except_input::placeholder{
     color: rgba(0,0,0,0.3);
 }
+
+/* 버튼 */
 .ingredient_form_search_btn_content{
-    width: 1000px;
-    height: 80px;
-    background-color: black;
+    width: 750px;
+    height: 60px;
+    background-color: #003366;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
     font-family: "Noto Sans KR", sans-serif;
-    margin-top: 110px;
-    margin-left: 40px;
-    border-radius: 15px;
+    margin: 70px auto auto auto;
+    border-radius: 10px;
     cursor: pointer;
 }

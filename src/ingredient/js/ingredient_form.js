@@ -33,7 +33,8 @@ const Ingredient_form = () => {
 
     const ingredientSearchBtn = async () => {
         if (ingredientValue.length === 0 && exceptIngredientValue.length === 0) {alert("냉장고 속 재료 혹은 제외할 재료를 입력해 주세요."); return;}
-        if (ingredientValue.length >= 10) {alert("냉장고 속 재료는 10개 이내로 입력해 주세요."); return;}
+        if (ingredientValue.length >= 10) {alert("냉장고 속 재료는 10개 이내로 입력해 주세요."); return;};
+        if (exceptIngredientValue.length >= 10) {alert("냉장고 속 제외 재료는 10개 이내로 입력해 주세요."); return;};
         console.log("재료 : ", ingredientValue);
         console.log("제외 재료 : ", exceptIngredientValue);
         console.log("재료 검색 버튼 활성화");
@@ -68,20 +69,24 @@ const Ingredient_form = () => {
                     <label style={{color:"#003366", fontWeight:"bold"}}>냉장고 속의 재료</label>만 입력하시면<br></br>
                     <label style={{color:"black", fontWeight:"600"}}>최적의 레시피</label>를 추천해 드려요.
                 </div>
-                <div className='ingredient_form_input_content'>
+                <div className='ingredient_form_input_container'>
                     <div className='ingredient_form_input_title'>
                         냉장고 재료
                     </div>
-                    <input onChange={handleInputChange} className='ingredient_form_input' placeholder='냉장고 속 재료 입력'></input>
+                    <div className='ingredient_form_input_content'>
+                        <input onChange={handleInputChange} className='ingredient_form_input' placeholder='냉장고 속 재료 입력'></input>
+                    </div>
                     <div className='ingredient_form_input_serve_title'>
                         여러개의 재료 입력 시에 각 재료는 띄어쓰기로 구분해주세요
                     </div>
                 </div>
-                <div className='ingredient_form_except_input_content'>
+                <div className='ingredient_form_except_input_container'>
                     <div className='ingredient_form_except_input_title'>
                         제외 재료
                     </div>
-                    <input onChange={handleInputExceptChange} className='ingredient_form_except_input' placeholder='제외할 재료 입력'></input>
+                    <div className='ingredient_form_except_input_content'>
+                        <input onChange={handleInputExceptChange} className='ingredient_form_except_input' placeholder='제외할 재료 입력'></input>
+                    </div>
                 </div>
                 <div onClick={ingredientSearchBtn} className='ingredient_form_search_btn_content'>
                     검색

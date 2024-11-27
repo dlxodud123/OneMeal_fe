@@ -9,7 +9,7 @@ const Product_info = ({productInfo}) => {
                 <div className='product_info_popularity_content'>
                     <img src="https://2bob.co.kr/skin/nodskin_argio/images/rec_icon1.jpg"></img>
                     &nbsp;{productInfo[0].hits}&nbsp;&nbsp;&nbsp;&nbsp;
-                    <img src='	https://2bob.co.kr/skin/nodskin_argio/images/rec_icon2.jpg'></img>
+                    <img src='https://2bob.co.kr/skin/nodskin_argio/images/rec_icon2.jpg'></img>
                     &nbsp;{productInfo[0].favorite}
                 </div>
             </div>
